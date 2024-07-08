@@ -19,7 +19,7 @@
 .how_to_play_wrapper{
     margin: 4vw auto;
     /* border: 1px solid red; */
-    padding: 4vw;
+    padding: 5.4vw;
 }
 
 .product_image{
@@ -42,12 +42,20 @@
 
 .how_to_play_wrapper ul{
     /* border: 2px solid red; */
+    /* list-style-type:none; */
+
 }
 .how_to_play_wrapper li {
     /* display: inline-block; */
     padding-bottom: 2vw;
     /* line-height: 8vw; */
     color: var(--text-color);
+    /* font-size: 14px; */
+}
+.lhow_to_play_wrapper li::before {
+    content: "\2022"; /* Unicode character for bullet */
+    font-size: 20px; /* Adjust size as desired */
+     /* Optional: Adjust spacing */
 }
 
 .user_form{

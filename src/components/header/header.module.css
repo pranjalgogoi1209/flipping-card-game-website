@@ -1,6 +1,6 @@
 .Header {
   /* border: 1px solid black; */
-  
+  margin-bottom: 2.5vw;
 }
 
 
@@ -14,12 +14,19 @@
   /* padding-bottom: 3vw; */
 }
 
+.headerFrame{
+  /* border: 2px solid red; */
+}
 
 .header_images .logoImage{
-  width: 30vw;
+  width: 22vw;
+  height: 10vw;
+  /* width: 40%; */
+  /* width: 100px; */
   /* height: 10px; */
   /* height: 100%; */
+  /* border: 1px solid red; */
   position: absolute;
-  top: 1vw;
+  top: 18vw;
   /* left: 3vw; */
 }
