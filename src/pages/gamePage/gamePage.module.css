@@ -1,3 +1,46 @@
 .GamePage {
   border: 1px solid black;
+  background: linear-gradient(
+    var(--themeColor1),
+    #fff,
+    #fff,
+    #fff,
+    var(--themeColor1)
+  );
+
+  .header {
+    padding: 0 4vw;
+    width: 100%;
+    gap: 2vw;
+    justify-content: flex-start;
+    .name {
+      width: 100%;
+      font-style: italic;
+    }
+    .scoreTimeContainer {
+      width: 100%;
+      justify-content: space-between;
+      .score {
+      }
+      .time {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .startingCountDown {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    z-index: 100;
+    .count {
+      font-size: 40vw;
+    }
+  }
 }
