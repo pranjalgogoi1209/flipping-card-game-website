@@ -4,7 +4,7 @@ import styles from "./gamePage.module.css";
 import { Cards, CountDown, GameResult } from "../../components";
 import { backCardsArr } from "../../utils/backCards";
 
-export default function GamePage() {
+export default function GamePage({ name }) {
   const [cards, setCards] = useState([]);
   const [seconds, setSeconds] = useState(90);
   const [score, setScore] = useState(0);
@@ -58,7 +58,9 @@ export default function GamePage() {
   return (
     <div className={`flex-col-center ${styles.GamePage}`}>
       <header className={`flex-col-center ${styles.header}`}>
-        <strong className={`txt1 ${styles.name}`}>Hello Kashika,</strong>
+        {name && (
+          <strong className={`txt1 ${styles.name}`}>Hello {name},</strong>
+        )}
 
         {/* score and time */}
         <div className={`flex-row-center ${styles.scoreTimeContainer}`}>

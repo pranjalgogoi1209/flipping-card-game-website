@@ -1,5 +1,7 @@
 /* mobile view */
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
   --themeColor1: #ffe7dc;
 }
@@ -9,6 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -19,7 +22,6 @@ body {
   max-width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: var(--themeColor1);
 }
 
 img {
@@ -29,13 +31,13 @@ img {
 
 /* akshay */
 h1 {
-  font-size: 7vw;
+  font-size: 6vw;
   text-align: center;
 }
 
 /* pranjal */
 h2 {
-  font-size: 6vw;
+  font-size: 5vw;
 }
 
 /* h3 {
@@ -47,10 +49,13 @@ h2 {
   font-size: 4.5vw;
 }
 
-/* akshay */
 .txt2 {
-  font-size: 4vw;
+  font-size: 3.3vw;
   text-align: center;
+}
+
+li {
+  list-style-type: none;
 }
 
 .flex-row-center {

@@ -2,12 +2,12 @@
   padding: 5vw 0;
   background: linear-gradient(
     var(--themeColor1),
+    #fff 20%,
     #fff,
     #fff,
-    #fff,
+    #fff 90%,
     var(--themeColor1)
   );
-
   .header {
     padding: 0 6vw;
     width: 100%;

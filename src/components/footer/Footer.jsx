@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./footer.module.css";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -7,7 +7,7 @@ import footerImg from "./../../assets/footer/footerImg.png";
 
 export default function Footer() {
   const location = useLocation();
-  console.log();
+
   return (
     <div className={`flex-col-center ${styles.Footer}`}>
       {location.pathname !== "/reward" && (

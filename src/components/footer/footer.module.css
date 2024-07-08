@@ -1,4 +1,5 @@
 .Footer {
+  background-color: var(--themeColor1);
   .imgContainer {
     width: 100%;
   }
