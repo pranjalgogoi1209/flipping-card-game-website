@@ -1,2 +1,94 @@
+:root{
+    --text-color:#42140E;
+}
+
 .HomePage {
+    padding: 4vw;
+}
+
+.title_heading_wrapper{
+    padding: 2vw 0;
+    margin-bottom: 2vw;
+}
+
+.content_text{
+    padding: 1vw;
+    gap: 3vw;
+}
+
+.how_to_play_wrapper{
+    margin: 4vw auto;
+    /* border: 1px solid red; */
+    padding: 4vw;
+}
+
+.product_image{
+    /* border: 2px solid red; */
+    margin: 2vw auto;
+    /* background-color: white; */
+}
+
+.product_image img{
+    
+}
+
+.how_to_play_wrapper h2{
+    font-size: 3.6vw;
+    text-align: center;
+    display: block;
+    padding-bottom: 2.4vw;
+    color: var(--text-color);
+}
+
+.how_to_play_wrapper ul{
+    /* border: 2px solid red; */
+}
+.how_to_play_wrapper li {
+    /* display: inline-block; */
+    padding-bottom: 2vw;
+    /* line-height: 8vw; */
+    color: var(--text-color);
+}
+
+.user_form{
+    width: 100%;
+    /* border: 2px solid red; */
+    padding: 5vw;
+    background-color: #fff;
+    border-radius: 2vw;
+    margin-bottom: 2vw;
+}
+
+.input_field{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    /* gap: 2vw; */
+    margin-bottom: 4vw;
+}
+.input_field label{
+    color: var(--text-color);
+}
+
+.user_form button{
+    /* border: 2px solid red; */
+    background-color: #42140E;
+    padding: 3.3vw;
+    width: 100%;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 1.2vw;
+    font-size: 2.3vw;
+}
+
+.input_field input{
+    padding: 2vw;
+    font-size: 3.3vw;
+    outline: none;
+    width: 100%;
+    border: none;
+    border: .5vw solid gray;
+    border-radius: 1.1vw;
+    margin-top: 2vw;
 }
