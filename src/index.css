@@ -5,6 +5,7 @@
 }
 
 * {
+  color: #42140e;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -34,7 +35,7 @@ h1 {
 
 /* pranjal */
 h2 {
-  font-size: 2.5vw;
+  font-size: 6vw;
 }
 
 /* h3 {
@@ -43,12 +44,12 @@ h2 {
 
 /* pranjal */
 .txt1 {
-  font-size: 4vw;
+  font-size: 4.5vw;
 }
 
 /* akshay */
 .txt2 {
-  font-size: 4.2vw;
+  font-size: 4vw;
   text-align: center;
 }
 

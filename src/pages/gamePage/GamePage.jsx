@@ -20,6 +20,8 @@ export default function GamePage() {
         setStartingCountDown((prev) => prev - 1);
       }, 1000);
       return () => clearTimeout(timer);
+    } else {
+      setIsGameStarted(true);
     }
   }, [startingCountDown, isGameStarted]);
 
@@ -33,7 +35,7 @@ export default function GamePage() {
     setCards(shuffledCards);
 
     // restart timing
-    setSeconds(20);
+    setSeconds(300);
 
     // restart score
     setScore(0);
@@ -46,7 +48,7 @@ export default function GamePage() {
   }, [isGameStarted, gameNo]);
 
   useEffect(() => {
-    if (score === 6 || seconds === 0) {
+    if (score === 10 || seconds === 0) {
       setTimeout(() => {
         setShowResult(true);
       }, 1000);
@@ -62,11 +64,15 @@ export default function GamePage() {
         <div className={`flex-row-center ${styles.scoreTimeContainer}`}>
           <p className={`txt1 ${styles.score}`}>Score: {score}</p>
           <div className={`txt1 flex-row-center ${styles.time}`}>
-            <CountDown
-              seconds={seconds}
-              setSeconds={setSeconds}
-              score={score}
-            />
+            {isGameStarted ? (
+              <CountDown
+                seconds={seconds}
+                setSeconds={setSeconds}
+                score={score}
+              />
+            ) : (
+              "00:00"
+            )}
           </div>
         </div>
       </header>
