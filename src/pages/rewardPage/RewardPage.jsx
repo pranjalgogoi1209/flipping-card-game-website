@@ -16,7 +16,7 @@ export default function RewardPage() {
         <h2>your score is <em>18</em></h2>
       </div>
 
-      <div className={styles.context_text}>
+      <div className={`flex-col-center ${styles.context_text}`}>
         <p className="txt2">You’ve just mastered the Colorbar Cosmetics Memory Card Game! 🥳</p>
         <p className="txt2">Your 🎉 <em><strong>50 loyalty points</strong></em> are now shining brightly in your account. Head over to the account page on our website to see your points.</p>
         <p className="txt2">The excitement doesn’t stop here—<em><strong>stay tuned as we reveal the 👑 top 10 winners</strong></em> on Instagram!</p>
@@ -31,7 +31,7 @@ export default function RewardPage() {
         <img src={makeupkit} alt="" />
       </div>
 
-      <div className={styles.product_slider}>
+      <div className={`flex-col-center ${styles.product_slider}`}>
         <h2>Check Out Our bestsellers</h2>
 
         <div className={`flex-row-center ${styles.product_box_wrapper}`}>
