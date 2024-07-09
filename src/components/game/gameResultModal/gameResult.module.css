@@ -1,3 +1,4 @@
+/* mobile view */
 .GameResult {
   width: 100vw;
   height: 100vh;
@@ -16,11 +17,9 @@
     border-radius: 1vw;
     width: 100%;
     background-color: #fff;
-    color: #000;
     padding: 5vw;
     border-radius: 2vw;
     gap: 3vw;
-
     .gameWonContainer {
       gap: 3vw;
       .congrats {
@@ -51,6 +50,70 @@
       gap: 1vw;
       svg {
         font-size: 1.2vw;
+      }
+    }
+  }
+}
+
+/* tablet view */
+@media all and (min-width: 480px) {
+  .GameResult {
+    .mainContainer {
+      width: 70vw;
+      border: 0.1vw solid transparent;
+      padding: 5vw 3vw;
+      border-radius: 1.5vw;
+      gap: 2vw;
+
+      .gameWonContainer {
+        gap: 2vw;
+        .congrats {
+          font-size: 5vw;
+        }
+      }
+
+      .gameLostContainer {
+        gap: 2vw;
+        width: 100%;
+        .score {
+          font-size: 5vw;
+        }
+        .line {
+          width: 90%;
+          border: 0.1vw solid transparent;
+          border-radius: 1.5vw;
+        }
+      }
+    }
+  }
+}
+
+/* laptop view */
+@media all and (min-width: 991px) {
+  .GameResult {
+    .mainContainer {
+      width: 25vw;
+      border: 0.08vw solid transparent;
+      padding: 2vw;
+      border-radius: 0.5vw;
+      gap: 2vw;
+
+      .gameWonContainer {
+        gap: 1vw;
+        .congrats {
+          font-size: 1.5vw;
+        }
+      }
+
+      .gameLostContainer {
+        gap: 1vw;
+        .score {
+          font-size: 1.5vw;
+        }
+        .line {
+          border: 0.08vw solid transparent;
+          border-radius: 1.5vw;
+        }
       }
     }
   }

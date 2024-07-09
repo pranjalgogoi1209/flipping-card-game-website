@@ -14,7 +14,7 @@ export default function GameResult({
     <div className={`flex-row-center ${styles.GameResult}`}>
       <div className={`flex-col-center ${styles.mainContainer}`}>
         {/* game won container */}
-        {score !== 20 && (
+        {score === 20 && (
           <div className={`flex-col-center ${styles.gameWonContainer}`}>
             <p className={styles.congrats}>CONGRATS!</p>
             <p className={`txt2`}>
@@ -24,7 +24,7 @@ export default function GameResult({
         )}
 
         {/* game lost container */}
-        {score === 20 && (
+        {score !== 20 && (
           <div className={`flex-col-center ${styles.gameLostContainer}`}>
             <p className={`txt2`}>TIME'S UP!</p>
             <p className={styles.score}>
@@ -37,16 +37,6 @@ export default function GameResult({
         <Link to={"/reward"} className={`txt2`}>
           Click here to avail your reward
         </Link>
-
-        <button
-          onClick={() => {
-            setIsGameStarted(true);
-            setGameNo((prev) => prev++);
-            setShowResult(false);
-            shuffleCards();
-          }}
-          className={`btn flex-row-center ${styles.playBtn}`}
-        ></button>
       </div>
     </div>
   );
