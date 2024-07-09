@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import styles from "./gamePage.module.css";
+import { Link } from "react-router-dom";
 
 import { Cards, CountDown, GameResult } from "../../components";
 import { backCardsArr } from "../../utils/backCards";
+import BgIcons from "../../components/bgIcons/BgIcons";
 
-export default function GamePage({ name }) {
+import logo from "./../../assets/header/logo.png";
+
+export default function GamePage({ name, isLaptopView }) {
   const [cards, setCards] = useState([]);
   const [seconds, setSeconds] = useState(90);
   const [score, setScore] = useState(0);
@@ -57,6 +61,13 @@ export default function GamePage({ name }) {
 
   return (
     <div className={`flex-col-center ${styles.GamePage}`}>
+      {/* logo */}
+      {isLaptopView && (
+        <div className={styles.logoContainer}>
+          <img src={logo} alt="logo" />
+        </div>
+      )}
+
       <header className={`flex-col-center ${styles.header}`}>
         {name && (
           <strong className={`txt1 ${styles.name}`}>Hello {name},</strong>
@@ -84,6 +95,12 @@ export default function GamePage({ name }) {
         <Cards cards={cards} setCards={setCards} setScore={setScore} />
       </div>
 
+      {isLaptopView && (
+        <Link to="#" className={`txt2 ${styles.link}`}>
+          Back to Website
+        </Link>
+      )}
+
       {/* starting countdown */}
       {startingCountDown > 0 && (
         <div className={`flex-row-center ${styles.startingCountDown}`}>
@@ -92,7 +109,8 @@ export default function GamePage({ name }) {
       )}
 
       {/* game result */}
-      {showResult && (
+      {/* showResult */}
+      {false && (
         <GameResult
           score={score}
           seconds={seconds}
@@ -102,6 +120,8 @@ export default function GamePage({ name }) {
           shuffleCards={shuffleCards}
         />
       )}
+
+      <BgIcons />
     </div>
   );
 }

@@ -29,13 +29,11 @@ img {
   width: 100%;
 }
 
-/* akshay */
 h1 {
   font-size: 6vw;
   text-align: center;
 }
 
-/* pranjal */
 h2 {
   font-size: 5vw;
 }
@@ -44,7 +42,6 @@ h2 {
   font-size: 1.5vw;
 } */
 
-/* pranjal */
 .txt1 {
   font-size: 4.5vw;
 }
@@ -72,6 +69,7 @@ li {
 }
 
 /* tablet view */
+<<<<<<< HEAD
 
 @media all and (min-width:480px){
   h1{
@@ -89,6 +87,22 @@ li {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+=======
+@media all and (min-width: 480px) {
+  .txt1 {
+    font-size: 3.2vw;
+  }
+}
+
+/* laptop view */
+@media all and (min-width: 991px) {
+  .txt1 {
+    font-size: 1.2vw;
+  }
+
+  .txt2 {
+    font-size: 0.8vw;
+>>>>>>> c052aaa044f80749bca493643a8c0e6a6182a473
   }
   h1{
     font-size: 3.4vw;
