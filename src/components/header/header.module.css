@@ -44,6 +44,7 @@
 @media all and (min-width: 991px) {
   .Header {
     height: 10vw;
+    background-color: transparent;
     .headerImgs {
       .headerLeftImg {
         width: 18vw;
