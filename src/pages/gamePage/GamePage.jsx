@@ -109,8 +109,8 @@ export default function GamePage({ name, isLaptopView }) {
       )}
 
       {/* game result */}
-      {/* showResult */}
-      {false && (
+
+      {showResult && (
         <GameResult
           score={score}
           seconds={seconds}

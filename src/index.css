@@ -38,10 +38,6 @@ h2 {
   font-size: 5vw;
 }
 
-/* h3 {
-  font-size: 1.5vw;
-} */
-
 .txt1 {
   font-size: 4.5vw;
 }
@@ -70,13 +66,36 @@ li {
 
 /* tablet view */
 @media all and (min-width: 480px) {
+  h1 {
+    font-size: 6vw;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 5vw;
+  }
+
   .txt1 {
     font-size: 3.2vw;
+  }
+
+  .txt2 {
+    font-size: 2.8vw;
+    text-align: center;
   }
 }
 
 /* laptop view */
 @media all and (min-width: 991px) {
+  h1 {
+    font-size: 6vw;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 5vw;
+  }
+
   .txt1 {
     font-size: 1.2vw;
   }
