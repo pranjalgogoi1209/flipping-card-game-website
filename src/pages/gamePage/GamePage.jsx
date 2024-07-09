@@ -8,10 +8,9 @@ import BgIcons from "../../components/bgIcons/BgIcons";
 
 import logo from "./../../assets/header/logo.png";
 
-export default function GamePage({ name, isLaptopView }) {
+export default function GamePage({ name, isLaptopView, score, setScore }) {
   const [cards, setCards] = useState([]);
   const [seconds, setSeconds] = useState(90);
-  const [score, setScore] = useState(0);
   const [isGameStarted, setIsGameStarted] = useState(false);
   const [showResult, setShowResult] = useState(false);
   const [gameNo, setGameNo] = useState(0);
@@ -121,7 +120,7 @@ export default function GamePage({ name, isLaptopView }) {
         />
       )}
 
-      <BgIcons />
+      {isLaptopView && <BgIcons />}
     </div>
   );
 }

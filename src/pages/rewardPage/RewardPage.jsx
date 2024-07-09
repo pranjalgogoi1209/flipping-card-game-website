@@ -14,12 +14,11 @@ import "swiper/css";
 import RewardSlider from "../../components/reward/RewardSlider";
 import BgIcons from "../../components/bgIcons/BgIcons";
 
-export default function RewardPage({isLaptopView}) {
+export default function RewardPage({ isLaptopView, score }) {
   return (
     <div className={`flex-col-center ${styles.RewardPage}`}>
-
-       {/* logo */}
-       {isLaptopView && (
+      {/* logo */}
+      {isLaptopView && (
         <div className={styles.logoContainer}>
           <img src={logo} alt="logo" />
         </div>
@@ -28,7 +27,7 @@ export default function RewardPage({isLaptopView}) {
       <div className={`flex-col-center ${styles.reward_page_heading}`}>
         <h1>Congratulations!</h1>
         <h2>
-          YOUR SCORE IS <em>18</em>
+          YOUR SCORE IS <em>{score}</em>
         </h2>
       </div>
 
@@ -119,9 +118,8 @@ export default function RewardPage({isLaptopView}) {
         </div>
       </div> */}
 
-
       <button>Home</button>
-      <BgIcons />
+      {isLaptopView && <BgIcons />}
     </div>
   );
 }

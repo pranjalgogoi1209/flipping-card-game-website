@@ -1,16 +1,38 @@
 /* mobile view */
 .Footer {
   background-color: var(--themeColor1);
-  .imgContainer {
+  position: relative;
+  .website {
+    position: absolute;
+    top: 4vw;
+  }
+  .imgs {
+    justify-content: space-between;
+    align-items: flex-end;
     width: 100%;
+
+    .footerLeftImg {
+      width: 60vw;
+    }
+    .footerRightImg {
+      width: 32vw;
+    }
   }
 }
 
 /* tablet view */
 @media all and (min-width: 480px) {
   .Footer {
-    .imgContainer {
-      width: 100%;
+    .website {
+      top: 3vw;
+    }
+    .imgs {
+      .footerLeftImg {
+        width: 40vw;
+      }
+      .footerRightImg {
+        width: 28vw;
+      }
     }
   }
 }

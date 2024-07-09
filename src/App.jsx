@@ -7,6 +7,7 @@ import { HomePage, GamePage, RewardPage } from "./pages";
 export default function App() {
   const [name, setName] = useState("");
   const [isLaptopView, setIsLaptopView] = useState(false);
+  const [score, setScore] = useState(0);
 
   console.log(isLaptopView);
   useEffect(() => {
@@ -43,11 +44,18 @@ export default function App() {
         />
         <Route
           path={"/game"}
-          element={<GamePage name={name} isLaptopView={isLaptopView} />}
+          element={
+            <GamePage
+              name={name}
+              isLaptopView={isLaptopView}
+              score={score}
+              setScore={setScore}
+            />
+          }
         />
         <Route
           path={"/reward"}
-          element={<RewardPage isLaptopView={isLaptopView} />}
+          element={<RewardPage isLaptopView={isLaptopView} score={score} />}
         />
       </Routes>
 

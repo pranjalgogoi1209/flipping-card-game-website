@@ -67,12 +67,11 @@ li {
 /* tablet view */
 @media all and (min-width: 480px) {
   h1 {
-    font-size: 6vw;
-    text-align: center;
+    font-size: 4vw;
   }
 
   h2 {
-    font-size: 5vw;
+    font-size: 3vw;
   }
 
   .txt1 {
@@ -88,12 +87,11 @@ li {
 /* laptop view */
 @media all and (min-width: 991px) {
   h1 {
-    font-size: 6vw;
-    text-align: center;
+    font-size: 2vw;
   }
 
   h2 {
-    font-size: 5vw;
+    font-size: 1.5vw;
   }
 
   .txt1 {

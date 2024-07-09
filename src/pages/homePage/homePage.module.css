@@ -1,11 +1,10 @@
 /* mobile view */
 .HomePage {
-  background: linear-gradient(var(--themeColor1), #fff 35%, var(--themeColor1));
   gap: 8vw;
   padding: 4vw 6vw;
+  background: linear-gradient(var(--themeColor1), #fff 35%, var(--themeColor1));
   .header {
     gap: 3vw;
-
     .content_text {
       gap: 4vw;
       strong {
@@ -13,102 +12,17 @@
       }
     }
   }
-
   .product_image {
     width: 100%;
   }
 
-  .how_to_play_wrapper {
-    gap: 3vw;
-    h2 {
-      text-align: center;
-      color: var(--text-color);
-    }
-
-    ul {
-      gap: 2vw;
-      align-items: flex-start;
-      padding-left: 4vw;
-      li {
-        text-align: left !important;
-        font-weight: 500;
-        position: relative;
-        &::before {
-          content: "•";
-          position: absolute;
-          left: -2.5vw;
-          font-weight: 500;
-        }
-      }
-    }
-  }
-
-  .user_form {
-    width: 100%;
-    padding: 5vw;
-    background-color: #fff;
-    border-radius: 2vw;
-    margin-bottom: 2vw;
-    align-items: flex-start;
-    gap: 5.5vw;
-    .input_field {
-      width: 100%;
-      align-items: flex-start;
-
-      label {
-        font-weight: 500;
-      }
-
-      input {
-        padding: 2vw;
-        outline: none;
-        width: 100%;
-        border: none;
-        border: 0.15vw solid rgba(0, 0, 0, 0.2);
-        border-radius: 1.1vw;
-        margin-top: 2vw;
-        text-align: left !important;
-      }
-    }
-
-    button {
-      background-color: #42140e;
-      padding: 2.8vw 0;
-      width: 100%;
-      color: #fff;
-      outline: none;
-      border: none;
-      border-radius: 1.2vw;
-    }
-  }
-}
-
-@media all and (min-width: 480px) {
-  .HomePage {
+  .playFormContainer {
     gap: 8vw;
-    padding: 4vw 6vw;
-    .header {
-      gap: 3vw;
-
-      .content_text {
-        gap: 4vw;
-        strong {
-          font-weight: 600;
-        }
-      }
-    }
-
-    .product_image {
-      width: 100%;
-    }
-
     .how_to_play_wrapper {
       gap: 3vw;
       h2 {
         text-align: center;
-        color: var(--text-color);
       }
-
       ul {
         gap: 2vw;
         align-items: flex-start;
@@ -126,7 +40,6 @@
         }
       }
     }
-
     .user_form {
       width: 100%;
       padding: 5vw;
@@ -135,14 +48,14 @@
       margin-bottom: 2vw;
       align-items: flex-start;
       gap: 5.5vw;
+      box-shadow: 0 0 1vw rgba(0, 0, 0, 0.1);
       .input_field {
+        gap: 2vw;
         width: 100%;
         align-items: flex-start;
-
         label {
           font-weight: 500;
         }
-
         input {
           padding: 2vw;
           outline: none;
@@ -150,11 +63,9 @@
           border: none;
           border: 0.15vw solid rgba(0, 0, 0, 0.2);
           border-radius: 1.1vw;
-          margin-top: 2vw;
           text-align: left !important;
         }
       }
-
       button {
         background-color: #42140e;
         padding: 2.8vw 0;
@@ -164,6 +75,127 @@
         border: none;
         border-radius: 1.2vw;
       }
+    }
+  }
+}
+
+/* tablet view */
+@media all and (min-width: 480px) {
+  .HomePage {
+    gap: 6vw;
+    padding: 5vw 7vw;
+    .header {
+      gap: 2vw;
+      .content_text {
+        gap: 3vw;
+      }
+    }
+    .product_image {
+      width: 90%;
+    }
+
+    .playFormContainer {
+      gap: 6vw;
+      .how_to_play_wrapper {
+        gap: 2vw;
+        ul {
+          gap: 1vw;
+        }
+      }
+      .user_form {
+        width: 100%;
+        padding: 5vw;
+        background-color: #fff;
+        border-radius: 2vw;
+        margin-bottom: 2vw;
+        align-items: flex-start;
+        gap: 5.5vw;
+        box-shadow: 0 0 0.8vw rgba(0, 0, 0, 0.1);
+        .input_field {
+          gap: 1vw;
+          input {
+            padding: 1.5vw;
+            border: 0.13vw solid rgba(0, 0, 0, 0.2);
+            border-radius: 0.8vw;
+          }
+        }
+        button {
+          padding: 2vw 0;
+          border-radius: 1vw;
+        }
+      }
+    }
+  }
+}
+
+/* laptop view */
+@media all and (min-width: 991px) {
+  .HomePage {
+    gap: 2vw;
+    padding: 2vw;
+    background: none;
+    .logoContainer {
+      width: 8vw;
+    }
+    .header {
+      width: 54vw;
+      gap: 1vw;
+      .content_text {
+        gap: 1vw;
+        .txt {
+          line-height: 1.3vw;
+        }
+      }
+    }
+    .product_image {
+      width: 20%;
+    }
+    .playFormContainer {
+      width: 100%;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 8vw;
+      .how_to_play_wrapper {
+        width: 35vw;
+        gap: 1vw;
+        h2 {
+          width: 80%;
+          text-align: left;
+        }
+        ul {
+          gap: 0.5vw;
+          li {
+            &::before {
+              left: -1vw;
+            }
+          }
+        }
+      }
+      .user_form {
+        width: 27vw;
+        background-color: #fff;
+        padding: 2vw;
+        border-radius: 0.3vw;
+        margin-bottom: 0;
+        gap: 1vw;
+        box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.1);
+        .input_field {
+          gap: 0.5vw;
+          input {
+            padding: 0.5vw;
+            border: 0.13vw solid rgba(0, 0, 0, 0.2);
+            border-radius: 0.2vw;
+          }
+        }
+
+        button {
+          padding: 0.6vw 0;
+          border-radius: 0.2vw;
+        }
+      }
+    }
+    .link {
+      margin-top: 1vw;
     }
   }
 }

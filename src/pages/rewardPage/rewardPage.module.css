@@ -85,7 +85,7 @@
     width: 20vw;
     padding: 1.4vw 2vw;
     font-size: 3.4vw;
-    border-radius: .5vw;
+    border-radius: 0.5vw;
     color: #fff;
     background-color: var(--text-color);
     outline: none;
@@ -95,18 +95,17 @@
   }
 }
 
-
 /* tablet view */
 
-@media all and (min-width:480px) {
-  .RewardPage{
+@media all and (min-width: 480px) {
+  .RewardPage {
     /* border: 1px solid red; */
     .reward_page_heading {
-      h2{
+      h2 {
         font-size: 2.3vw;
       }
     }
-    .context_text{
+    .context_text {
       /* border: 2px solid red; */
       gap: 1.3vw;
     }
@@ -114,36 +113,37 @@
     .insta_img {
       width: 20vw;
     }
-    .main_img{
+    .main_img {
       width: 70%;
       /* border: 1px solid red; */
     }
-    
-    button{
+
+    button {
       width: 18vw;
       padding: 1.4vw 1.2vw;
       font-size: 2.4vw;
     }
-
   }
 }
 
 /* laptop view */
-@media all and (min-width:991px){
-  .RewardPage{
-    background:none;
+@media all and (min-width: 991px) {
+  .RewardPage {
+    border: 1px solid black;
+    background: none;
     gap: 2vw;
+    padding: 2vw;
     .logoContainer {
       width: 8vw;
     }
     .reward_page_heading {
       /* border: 1px solid red; */
       gap: 1vw;
-      h2{
+      h2 {
         font-size: 1.6vw;
       }
     }
-    .context_text{
+    .context_text {
       /* border: 2px solid red; */
       gap: 1.3vw;
     }
@@ -151,16 +151,15 @@
     .insta_img {
       width: 12vw;
     }
-    .main_img{
+    .main_img {
       width: 35%;
       /* border: 1px solid red; */
     }
-    
-    button{
+
+    button {
       width: 13vw;
-      padding: .7vw 1vw;
+      padding: 0.7vw 1vw;
       font-size: 1.4vw;
     }
-
   }
 }

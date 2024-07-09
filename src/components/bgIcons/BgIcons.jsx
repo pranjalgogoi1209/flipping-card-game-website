@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./bgIcons.module.css";
 import headerLeftImg from "./../../assets/header/headerLeftImg.png";
 import headerRightImg from "./../../assets/header/headerRightImg.png";
-import logo from "./../../assets/header/logo.png";
+import footerLeftImg from "./../../assets/footer/footerLeftImg.png";
+import footerRightImg from "./../../assets/footer/footerRightImg.png";
 
 export default function BgIcons() {
   return (
@@ -28,14 +29,14 @@ export default function BgIcons() {
         <div
           className={`flex-row-center ${styles.imgContainer} ${styles.bottomLeftImg}`}
         >
-          <img src={headerLeftImg} alt="footer-left-img" />
+          <img src={footerLeftImg} alt="footer-left-img" />
         </div>
 
         {/* bottom-left-right-img */}
         <div
           className={`flex-row-center ${styles.imgContainer} ${styles.bottomRightImg}`}
         >
-          <img src={headerLeftImg} alt="footer-right-img" />
+          <img src={footerRightImg} alt="footer-right-img" />
         </div>
       </div>
     </div>

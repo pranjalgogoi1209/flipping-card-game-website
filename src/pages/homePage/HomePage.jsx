@@ -3,8 +3,12 @@ import axios from "axios";
 import styles from "./homePage.module.css";
 import productImage from "../../assets/home/makeup.png";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function HomePage({ name, setName }) {
+import BgIcons from "./../../components/bgIcons/BgIcons";
+import logo from "./../../assets/header/logo.png";
+
+export default function HomePage({ name, setName, isLaptopView }) {
   const navigate = useNavigate();
   const [mobileNumber, setMobileNumber] = useState("");
 
@@ -26,11 +30,17 @@ export default function HomePage({ name, setName }) {
 
   return (
     <div className={`flex-col-center ${styles.HomePage}`}>
+      {isLaptopView && (
+        <div className={`flex-row-center ${styles.logoContainer}`}>
+          <img src={logo} alt="logo" />
+        </div>
+      )}
+
       <header className={`flex-col-center ${styles.header}`}>
         <h1>Flip, Match, and Win!</h1>
 
         <div className={`flex-col-center ${styles.content_text}`}>
-          <p className="txt2">
+          <p className={`txt2 ${styles.txt}`}>
             Test your memory and have fun with our card-matching game. Every
             player will earn 🎉{" "}
             <em>
@@ -52,65 +62,75 @@ export default function HomePage({ name, setName }) {
         <img src={productImage} alt="" />
       </div>
 
-      {/* how to play */}
-      <div className={`flex-col-center ${styles.how_to_play_wrapper}`}>
-        <h2>HOW TO PLAY?</h2>
-        <ul className="flex-col-center">
-          <li className={`txt2`}>
-            The cards are placed face down, with each card having a matching
-            pair.
-          </li>
-          <li className={`txt2`}>Select 2 cards at a time.</li>
-          <li className={`txt2`}>
-            If the cards match, you move on to the next pair.
-          </li>
-          <li className={`txt2`}>
-            If the cards don't match, they are turned face down again.
-          </li>
-          <li className={`txt2`}>
-            Match all the cards before the timer run out.
-          </li>
-        </ul>
+      <div className={`flex-col-center ${styles.playFormContainer}`}>
+        {/* how to play */}
+        <div className={`flex-col-center ${styles.how_to_play_wrapper}`}>
+          <h2>HOW TO PLAY?</h2>
+          <ul className="flex-col-center">
+            <li className={`txt2`}>
+              The cards are placed face down, with each card having a matching
+              pair.
+            </li>
+            <li className={`txt2`}>Select 2 cards at a time.</li>
+            <li className={`txt2`}>
+              If the cards match, you move on to the next pair.
+            </li>
+            <li className={`txt2`}>
+              If the cards don't match, they are turned face down again.
+            </li>
+            <li className={`txt2`}>
+              Match all the cards before the timer run out.
+            </li>
+          </ul>
+        </div>
+
+        {/* form */}
+        <form
+          onSubmit={handleSubmit}
+          className={`flex-col-center ${styles.user_form}`}
+        >
+          <div className={`flex-col-center ${styles.input_field}`}>
+            <label htmlFor="name" className="txt2">
+              Name*
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Rysha"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              className="txt2"
+            />
+          </div>
+
+          <div className={`flex-col-center ${styles.input_field}`}>
+            <label htmlFor="mobile_number" className="txt2">
+              Mobile Number*
+            </label>
+            <input
+              type="number"
+              name="mobileNumber"
+              id="mobile_number"
+              placeholder="98765-xxxxx"
+              value={mobileNumber}
+              onChange={(event) => setMobileNumber(event.target.value)}
+              className="txt2"
+            />
+          </div>
+          <button type="submit" className="txt2">
+            Start Game
+          </button>
+        </form>
       </div>
 
-      {/* form */}
-      <form
-        onSubmit={handleSubmit}
-        className={`flex-col-center ${styles.user_form}`}
-      >
-        <div className={`flex-col-center ${styles.input_field}`}>
-          <label htmlFor="name" className="txt2">
-            Name*
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Rysha"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-            className="txt2"
-          />
-        </div>
+      {isLaptopView && (
+        <Link to="#" className={`txt2 ${styles.link}`}>
+          Back to Website
+        </Link>
+      )}
 
-        <div className={`flex-col-center ${styles.input_field}`}>
-          <label htmlFor="mobile_number" className="txt2">
-            Mobile Number*
-          </label>
-          <input
-            type="number"
-            name="mobileNumber"
-            id="mobile_number"
-            placeholder="98765-xxxxx"
-            value={mobileNumber}
-            onChange={(event) => setMobileNumber(event.target.value)}
-            className="txt2"
-          />
-        </div>
-        <button type="submit" className="txt2">
-          Start Game
-        </button>
-      </form>
+      {isLaptopView && <BgIcons />}
     </div>
   );
 }
