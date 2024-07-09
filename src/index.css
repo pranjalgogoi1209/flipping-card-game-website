@@ -71,6 +71,16 @@ li {
   justify-content: center;
 }
 
+/* tablet view */
+
+@media all and (min-width:480px){
+  h1{
+    font-size: 4.5vw;
+  }
+  .txt2{
+    font-size: 2.1vw;
+  }
+}
 /* laptop view */
 @media all and (min-width: 991px) {
   html,
@@ -79,5 +89,11 @@ li {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+  }
+  h1{
+    font-size: 3.4vw;
+  }
+  .txt2{
+    font-size: 1.3vw;
   }
 }

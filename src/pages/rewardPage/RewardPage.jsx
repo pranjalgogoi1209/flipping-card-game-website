@@ -109,9 +109,6 @@ export default function RewardPage() {
         </div>
       </div> */}
 
-      <div>
-        <RewardSlider />
-      </div>
 
       <button>Home</button>
     </div>

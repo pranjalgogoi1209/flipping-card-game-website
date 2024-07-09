@@ -4,8 +4,9 @@
   --text-color: #42140e;
 }
 
+/* mobile view */
+
 .RewardPage {
-  /* border: 1px solid red; */
   padding: 4.2vw;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -14,9 +15,7 @@
   background: linear-gradient(var(--themeColor1), #fff 35%, var(--themeColor1));
 
   .reward_page_heading {
-    /* border: 2px solid red; */
     gap: 2.1vw;
-    /* margin: 4vw auto 6vw auto; */
     h2 {
       font-size: 3.4vw;
       color: var(--text-color);
@@ -24,7 +23,6 @@
   }
 
   .context_text {
-    /* border: 2px solid red; */
     padding: 1.4vw;
     gap: 2.3vw;
     p {
@@ -35,7 +33,7 @@
   }
 
   .insta_img {
-    width: 40vw;
+    width: 30vw;
   }
   .main_img {
     width: 100%;
@@ -49,32 +47,22 @@
       color: var(--text-color);
     }
     .product_box_wrapper {
-      border: 1px solid red;
+      /* border: 1px solid red; */
       gap: 1.5vw;
-
-      /* border: 2px solid red; */
-
       .product_card {
-        /* border: 1px solid red; */
         width: 100%;
-
         border: 1px solid #f6f0e3;
         border-radius: 0.5vw;
         background-color: #fff;
         padding: 1.5vw;
-
         .card_img {
           width: 100%;
           height: 28vw;
         }
-
         .product_card_text {
-          /* height: 30vw; */
-          /* border: 2px solid red; */
           img {
             height: fit-content;
           }
-
           p {
             font-size: 12px;
             text-wrap: nowrap;
@@ -84,28 +72,90 @@
           button {
             width: 100%;
             font-size: 12px;
-            /* border: 2px solid red !important; */
-
             outline: none;
             border: none;
             background-color: transparent;
-
             color: var(--text-color);
           }
         }
       }
     }
   }
-
   button {
     width: 20vw;
     padding: 1.4vw 2vw;
     font-size: 3.4vw;
-    border-radius: 1vw;
+    border-radius: .5vw;
     color: #fff;
     background-color: var(--text-color);
     outline: none;
     border: none;
     font-family: "Montserrat", sans-serif;
+  }
+}
+
+
+/* tablet view */
+
+@media all and (min-width:480px) {
+  .RewardPage{
+    /* border: 1px solid red; */
+    .reward_page_heading {
+      h2{
+        font-size: 2.3vw;
+      }
+    }
+    .context_text{
+      /* border: 2px solid red; */
+      gap: 1.3vw;
+    }
+
+    .insta_img {
+      width: 20vw;
+    }
+    .main_img{
+      width: 70%;
+      /* border: 1px solid red; */
+    }
+    
+    button{
+      width: 18vw;
+      padding: 1.4vw 1.2vw;
+      font-size: 2.4vw;
+    }
+
+  }
+}
+
+/* laptop view */
+@media all and (min-width:991px){
+  .RewardPage{
+    gap: 2vw;
+    .reward_page_heading {
+      /* border: 1px solid red; */
+      gap: 1vw;
+      h2{
+        font-size: 1.6vw;
+      }
+    }
+    .context_text{
+      /* border: 2px solid red; */
+      gap: 1.3vw;
+    }
+
+    .insta_img {
+      width: 15vw;
+    }
+    .main_img{
+      width: 40%;
+      /* border: 1px solid red; */
+    }
+    
+    button{
+      width: 13vw;
+      padding: .7vw 1vw;
+      font-size: 1.4vw;
+    }
+
   }
 }
