@@ -7,14 +7,24 @@ import product_1 from "../../assets/reward/tlec001_510x.progressive.png";
 import product_2 from "../../assets/reward/ccd001-1_66eb95ca-6c04-4cee-9d65-b4cc3943246c_492x.progressive.png";
 import product_3 from "../../assets/reward/creative1_492x.progressive 1 (1).png";
 import makeupkit from "../../assets/reward/makeup_kit-1 1.png";
+import logo from "./../../assets/header/logo.png";
 
 // Import Swiper styles
 import "swiper/css";
 import RewardSlider from "../../components/reward/RewardSlider";
+import BgIcons from "../../components/bgIcons/BgIcons";
 
-export default function RewardPage() {
+export default function RewardPage({isLaptopView}) {
   return (
     <div className={`flex-col-center ${styles.RewardPage}`}>
+
+       {/* logo */}
+       {isLaptopView && (
+        <div className={styles.logoContainer}>
+          <img src={logo} alt="logo" />
+        </div>
+      )}
+
       <div className={`flex-col-center ${styles.reward_page_heading}`}>
         <h1>Congratulations!</h1>
         <h2>
@@ -111,6 +121,7 @@ export default function RewardPage() {
 
 
       <button>Home</button>
+      <BgIcons />
     </div>
   );
 }

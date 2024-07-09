@@ -91,6 +91,7 @@
     outline: none;
     border: none;
     font-family: "Montserrat", sans-serif;
+    cursor: pointer;
   }
 }
 
@@ -130,7 +131,11 @@
 /* laptop view */
 @media all and (min-width:991px){
   .RewardPage{
+    background:none;
     gap: 2vw;
+    .logoContainer {
+      width: 8vw;
+    }
     .reward_page_heading {
       /* border: 1px solid red; */
       gap: 1vw;
@@ -144,10 +149,10 @@
     }
 
     .insta_img {
-      width: 15vw;
+      width: 12vw;
     }
     .main_img{
-      width: 40%;
+      width: 35%;
       /* border: 1px solid red; */
     }
     
