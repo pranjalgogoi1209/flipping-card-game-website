@@ -1,53 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --text-color: #42140e;
+}
+
 .RewardPage {
   /* border: 1px solid red; */
   padding: 4.2vw;
-  /* font-optical-sizing: auto; */
-  /* font-weight: <weight>; */
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
+  gap: 4.5vw;
+  background: linear-gradient(var(--themeColor1), #fff 35%, var(--themeColor1));
 
   .reward_page_heading {
     /* border: 2px solid red; */
-    margin: 4vw auto 6vw auto;
+    gap: 2.1vw;
+    /* margin: 4vw auto 6vw auto; */
     h2 {
       font-size: 3.4vw;
+      color: var(--text-color);
     }
   }
 
   .context_text {
     /* border: 2px solid red; */
     padding: 1.4vw;
+    gap: 2.3vw;
     p {
+      color: var(--text-color);
       text-align: center;
       display: inline-block;
-      padding: 2vw 0;
-    }
-    img {
-      width: 20vw;
     }
   }
 
   .insta_img {
-    padding: 2.4vw 0;
-    img {
-      width: 40vw;
-      /* border: 2px solid red; */
-    }
+    width: 40vw;
   }
   .main_img {
-    margin: 4vw auto;
+    width: 100%;
   }
   .product_slider {
-    padding: 4vw 0;
+    /* border: 1px solid red; */
+    align-items: flex-start;
+    gap: 2.2vw;
     h2 {
       font-size: 3.4vw;
+      color: var(--text-color);
     }
     .product_box_wrapper {
-      padding-top: 1.6vw;
+      border: 1px solid red;
       gap: 1.5vw;
 
       /* border: 2px solid red; */
-      margin: 3vw auto;
+
       .product_card {
         /* border: 1px solid red; */
         width: 100%;
@@ -68,7 +74,7 @@
           img {
             height: fit-content;
           }
-          padding: 1vw 0;
+
           p {
             font-size: 12px;
             text-wrap: nowrap;
@@ -79,11 +85,12 @@
             width: 100%;
             font-size: 12px;
             /* border: 2px solid red !important; */
-            padding: 0;
+
             outline: none;
             border: none;
             background-color: transparent;
-            margin-top: 1.4vw;
+
+            color: var(--text-color);
           }
         }
       }

@@ -70,3 +70,14 @@ li {
   align-items: center;
   justify-content: center;
 }
+
+/* laptop view */
+@media all and (min-width: 991px) {
+  html,
+  body {
+    background-image: url("./assets/laptop-bg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
