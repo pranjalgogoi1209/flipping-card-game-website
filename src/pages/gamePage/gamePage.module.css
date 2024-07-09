@@ -1,15 +1,15 @@
 .GamePage {
-  /* border: 1px solid black; */
+  padding: 5vw 0;
   background: linear-gradient(
     var(--themeColor1),
+    #fff 20%,
     #fff,
     #fff,
-    #fff,
+    #fff 90%,
     var(--themeColor1)
   );
-
   .header {
-    padding: 0 4vw;
+    padding: 0 6vw;
     width: 100%;
     gap: 2vw;
     justify-content: flex-start;
@@ -37,10 +37,10 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
     z-index: 100;
     .count {
       font-size: 40vw;
+      color: #fff;
     }
   }
 }

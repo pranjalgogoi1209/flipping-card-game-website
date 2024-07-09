@@ -1,32 +1,16 @@
 .Header {
-  /* border: 1px solid black; */
-  margin-bottom: 2.5vw;
-}
-
-
-.header_images{
-  width: 100%;
-  height: 100%;
+  height: 24vw;
+  justify-content: flex-start !important;
   position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  /* padding-bottom: 3vw; */
-}
+  background-color: var(--themeColor1);
 
-.headerFrame{
-  /* border: 2px solid red; */
-}
+  .headerImg {
+    width: 100%;
+  }
 
-.header_images .logoImage{
-  width: 22vw;
-  height: 10vw;
-  /* width: 40%; */
-  /* width: 100px; */
-  /* height: 10px; */
-  /* height: 100%; */
-  /* border: 1px solid red; */
-  position: absolute;
-  top: 18vw;
-  /* left: 3vw; */
+  .logoContainer {
+    width: 20vw;
+    position: absolute;
+    bottom: 0;
+  }
 }

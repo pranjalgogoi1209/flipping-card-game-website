@@ -1,10 +1,16 @@
 import React from "react";
 import styles from "./rewardPage.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import instagramLogo from "../../assets/reward/Follow Us On Instagram 1.png"
 import product_1 from "../../assets/reward/tlec001_510x.progressive.png";
 import product_2 from "../../assets/reward/ccd001-1_66eb95ca-6c04-4cee-9d65-b4cc3943246c_492x.progressive.png";
 import product_3 from "../../assets/reward/creative1_492x.progressive 1 (1).png";
 import makeupkit from "../../assets/reward/makeup_kit-1 1.png"
+
+// Import Swiper styles
+import 'swiper/css';
+import RewardSlider from "../../components/reward/RewardSlider";
 
 
 export default function RewardPage() {
@@ -35,10 +41,16 @@ export default function RewardPage() {
         <h2>Check Out Our bestsellers</h2>
 
         <div className={`flex-row-center ${styles.product_box_wrapper}`}>
-
+          <Swiper 
+             spaceBetween={100}  // Space between slides
+             slidesPerView={3}  // Number of slides visible at once
+             navigation      
+            //  loop 
+            >
+          <SwiperSlide>
           <div className={styles.product_card}>
             <div className={styles.card_img}>
-            <img src={product_1} alt="" />
+              <img src={product_1} alt="" />
             </div>
             <div className={styles.product_card_text}>
               <p>Timeless lift mi...</p>
@@ -46,10 +58,11 @@ export default function RewardPage() {
               <button>+ Add to bag</button>
             </div>
           </div>
-
+          </SwiperSlide>
+          <SwiperSlide>
           <div className={styles.product_card}>
             <div className={styles.card_img}>
-            <img src={product_2} alt="" />
+              <img src={product_2} alt="" />
             </div>
             <div className={styles.product_card_text}>
               <p>Cellular Dry O...</p>
@@ -57,10 +70,12 @@ export default function RewardPage() {
               <button>+ Add to bag</button>
             </div>
           </div>
+          </SwiperSlide>
 
+          <SwiperSlide>
           <div className={styles.product_card}>
             <div className={styles.card_img}>
-            <img src={product_3} alt="" />
+              <img src={product_3} alt="" />
             </div>
             <div className={styles.product_card_text}>
               <p>Sexy Twosom </p>
@@ -68,9 +83,16 @@ export default function RewardPage() {
               <button>+ Add to bag</button>
             </div>
           </div>
-
+          </SwiperSlide>
+          </Swiper>
         </div>
       </div>
+
+      <div>
+
+        <RewardSlider />
+      </div>
+
       <button>Home</button>
     </div>
   );

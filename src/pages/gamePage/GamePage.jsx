@@ -4,7 +4,7 @@ import styles from "./gamePage.module.css";
 import { Cards, CountDown, GameResult } from "../../components";
 import { backCardsArr } from "../../utils/backCards";
 
-export default function GamePage() {
+export default function GamePage({ name }) {
   const [cards, setCards] = useState([]);
   const [seconds, setSeconds] = useState(90);
   const [score, setScore] = useState(0);
@@ -20,6 +20,8 @@ export default function GamePage() {
         setStartingCountDown((prev) => prev - 1);
       }, 1000);
       return () => clearTimeout(timer);
+    } else {
+      setIsGameStarted(true);
     }
   }, [startingCountDown, isGameStarted]);
 
@@ -33,7 +35,7 @@ export default function GamePage() {
     setCards(shuffledCards);
 
     // restart timing
-    setSeconds(20);
+    setSeconds(300);
 
     // restart score
     setScore(0);
@@ -46,7 +48,7 @@ export default function GamePage() {
   }, [isGameStarted, gameNo]);
 
   useEffect(() => {
-    if (score === 6 || seconds === 0) {
+    if (score === 10 || seconds === 0) {
       setTimeout(() => {
         setShowResult(true);
       }, 1000);
@@ -56,17 +58,23 @@ export default function GamePage() {
   return (
     <div className={`flex-col-center ${styles.GamePage}`}>
       <header className={`flex-col-center ${styles.header}`}>
-        <strong className={`txt1 ${styles.name}`}>Hello Kashika,</strong>
+        {name && (
+          <strong className={`txt1 ${styles.name}`}>Hello {name},</strong>
+        )}
 
         {/* score and time */}
         <div className={`flex-row-center ${styles.scoreTimeContainer}`}>
           <p className={`txt1 ${styles.score}`}>Score: {score}</p>
           <div className={`txt1 flex-row-center ${styles.time}`}>
-            <CountDown
-              seconds={seconds}
-              setSeconds={setSeconds}
-              score={score}
-            />
+            {isGameStarted ? (
+              <CountDown
+                seconds={seconds}
+                setSeconds={setSeconds}
+                score={score}
+              />
+            ) : (
+              "00:00"
+            )}
           </div>
         </div>
       </header>
