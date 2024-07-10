@@ -146,6 +146,15 @@ export default function RewardPage({ isLaptopView, score }) {
           onSwiper={(swiper) => console.log(swiper)}
           className={`flex-row-center ${styles.swiper}`}
         >
+          {/* left arrow */}
+          <div className={`flex-row-center ${styles.leftArrow}`}>
+            <img src="" alt="" />
+          </div>
+          {/* right arrow */}
+          <div className={`flex-row-center ${styles.rightArrow} `}>
+            <img src="" alt="" />
+          </div>
+
           {products.map((item, idx) => (
             <SwiperSlide
               className={`flex-col-center ${styles.swiperSlide}`}
