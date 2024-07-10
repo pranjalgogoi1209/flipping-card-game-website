@@ -74,6 +74,7 @@
         outline: none;
         border: none;
         border-radius: 1.2vw;
+        cursor: pointer;
       }
     }
   }

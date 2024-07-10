@@ -64,6 +64,7 @@ li {
   justify-content: center;
 }
 
+
 /* tablet view */
 @media all and (min-width: 480px) {
   h1 {

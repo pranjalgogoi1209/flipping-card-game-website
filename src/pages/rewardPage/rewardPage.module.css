@@ -63,7 +63,7 @@
           span{
             position: absolute;
             img{
-              width: 6vw;
+              width: 7vw;
             }
           }
         }
@@ -92,7 +92,7 @@
             outline: none;
             border: none;
             background-color: transparent;
-            color: var(--text-color);
+            color: #42140E;
             /* border: .4vw solid var(--text-color); */
             text-align: left;
             
@@ -142,10 +142,13 @@
       .product_box_wrapper{
         gap: 1vw;
         .product_card{
-          width: 26vw;
+          width: 22vw;
+          .card_img span img{
+            width: 4vw;
+          }
           .product_card_text{
             p{
-              font-size: 2.4vw;
+              font-size: 2.1vw;
             }
           }
         }
@@ -198,13 +201,27 @@
       .product_box_wrapper{
         gap: 1vw;
         .product_card{
-          width: 20vw;
+          padding: 1.2vw;
+          width: 13vw;
+          .card_img{
+            /* border: 2px solid red; */
+            span img{
+              width: 2vw;
+            }
+          }
           .product_card_text{
             p{
-              font-size: 2.4vw;
+              font-size: 1vw;
             }
             button{
-              border: .2vw solid var(--text-color);
+              border: .2vw solid #d8a38d;
+              font-size: 1vw;
+              text-align: center;
+            }
+            button:hover{
+              background-color: var(--text-color);
+              color: #fff;
+              border-color: var(--text-color);
             }
           }
           
