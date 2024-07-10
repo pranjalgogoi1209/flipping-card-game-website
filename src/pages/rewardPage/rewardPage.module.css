@@ -240,7 +240,7 @@
         position: relative;
         .leftArrow , .rightArrow {
           position: absolute;
-          z-index: 19;
+          z-index: 19999;
           cursor: pointer;
           img{
             width: 3vw;
@@ -250,7 +250,7 @@
           left:-1.8vw;
         }
         .rightArrow{
-          right: -1.8vw;
+          right: -1.2vw;
         }
       .swiper {
         width: 100%;
