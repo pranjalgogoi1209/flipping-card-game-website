@@ -38,6 +38,10 @@ h2 {
   font-size: 5vw;
 }
 
+h3 {
+  font-size: 3.8vw;
+}
+
 .txt1 {
   font-size: 4.5vw;
 }
@@ -64,7 +68,6 @@ li {
   justify-content: center;
 }
 
-
 /* tablet view */
 @media all and (min-width: 480px) {
   h1 {
@@ -74,7 +77,9 @@ li {
   h2 {
     font-size: 3vw;
   }
-
+  h3 {
+    font-size: 2.8vw;
+  }
   .txt1 {
     font-size: 3.2vw;
   }
@@ -90,16 +95,16 @@ li {
   h1 {
     font-size: 2vw;
   }
-
   h2 {
     font-size: 1.5vw;
   }
-
+  h3 {
+    font-size: 1.2vw;
+  }
   .txt1 {
     font-size: 1.2vw;
   }
-
   .txt2 {
-    font-size: 0.8vw;
+    font-size: 1vw;
   }
 }

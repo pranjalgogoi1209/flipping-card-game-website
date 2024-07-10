@@ -1,27 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
 :root {
   --text-color: #42140e;
 }
 
 /* mobile view */
-
 .RewardPage {
   padding: 4.2vw;
-  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   gap: 4.5vw;
   background: linear-gradient(var(--themeColor1), #fff 35%, var(--themeColor1));
-
   .reward_page_heading {
     gap: 2.1vw;
-    h2 {
-      font-size: 3.4vw;
-      color: var(--text-color);
+    p {
+      font-weight: 600;
     }
   }
-
   .context_text {
     padding: 1.4vw;
     gap: 2.3vw;
@@ -31,7 +24,6 @@
       display: inline-block;
     }
   }
-
   .insta_img {
     width: 30vw;
   }
@@ -39,73 +31,87 @@
     width: 100%;
   }
   .product_slider {
-    /* border: 1px solid red; */
+    p {
+      font-weight: 600;
+    }
     align-items: flex-start;
     width: 100%;
     gap: 2.2vw;
-    /* h2 {
-      font-size: 3.4vw;
-      color: var(--text-color);
-    } */
-    .product_box_wrapper {
-      /* border: 1px solid red; */
-      gap: 1.5vw;
-      .product_card {
-        width: 35vw;
+
+    .swiper {
+      width: 100vw;
+      gap: 1vw;
+      .swiperSlide {
+        width: 31vw;
+        height: 58vw;
         border: 1px solid #f6f0e3;
         border-radius: 0.5vw;
         background-color: #fff;
         padding: 1.8vw;
+        gap: 1vw;
+        justify-content: flex-start;
         .card_img {
-          width: 100%;
-          /* height: 28vw; */
-          position:relative;
-          span{
+          position: relative;
+          span {
             position: absolute;
-            img{
+            img {
               width: 7vw;
             }
+          }
+          .imgContainer {
+            width: 100%;
           }
         }
         .product_card_text {
           align-items: flex-start;
-          gap: 1.2vw;
+          gap: 0.5vw;
           img {
             height: fit-content;
           }
           p {
             font-size: 2.5vw;
+          }
+          div {
             text-wrap: wrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            .old_price{
-              color: #7d7d7d;
-              text-decoration: line-through;
+            strong {
+              font-weight: 600;
+              font-size: 2.8vw;
             }
-            .discountTxt{
+            .oldPrice {
+              color: #7d7d7d !important;
+              font-weight: 400;
+              font-size: 2.8vw;
+            }
+            .discountTxt {
               color: #e91010;
+              font-size: 2.3vw;
+              font-weight: 500;
             }
           }
-          button {
+          .addCart {
+            margin-top: 0.5vw;
+            outline: none;
             width: 100%;
             font-size: 2.2vw;
-            outline: none;
-            border: none;
+            border: 0.1vw solid #d8a38d;
             background-color: transparent;
-            color: #42140E;
-            /* border: .4vw solid var(--text-color); */
-            text-align: left;
-            
+            color: #42140e;
+            font-weight: 500;
+            border-radius: 1vw;
+            padding: 1.5vw 2vw;
           }
         }
       }
     }
   }
   button {
-    width: 20vw;
+    width: 21vw;
     padding: 1.4vw 2vw;
+    margin-top: 1vw;
     font-size: 3.4vw;
-    border-radius: 0.5vw;
+    border-radius: 1vw;
     color: #fff;
     background-color: var(--text-color);
     outline: none;
@@ -116,7 +122,6 @@
 }
 
 /* tablet view */
-
 @media all and (min-width: 480px) {
   .RewardPage {
     /* border: 1px solid red; */
@@ -126,41 +131,67 @@
       }
     }
     .context_text {
-      /* border: 2px solid red; */
       gap: 1.3vw;
     }
-
     .insta_img {
       width: 20vw;
     }
     .main_img {
       width: 70%;
-      /* border: 1px solid red; */
     }
-    .product_slider{
+    .product_slider {
       gap: 2vw;
-      .product_box_wrapper{
-        gap: 1vw;
-        .product_card{
-          width: 22vw;
-          .card_img span img{
-            width: 4vw;
+      .swiper {
+        gap: 0.8vw;
+        .swiperSlide {
+          width: 28vw !important;
+          height: 49vw;
+          border-radius: 0.2vw;
+          padding: 1.6vw;
+          gap: 0.8vw;
+          .card_img {
+            span {
+              img {
+                width: 6vw;
+              }
+            }
+            .imgContainer {
+              width: 90%;
+            }
           }
-          .product_card_text{
-            p{
-              font-size: 2.1vw;
+          .product_card_text {
+            gap: 0.7vw;
+            p {
+              font-size: 2vw;
+            }
+            div {
+              strong {
+                font-size: 2.3vw;
+              }
+              .oldPrice {
+                font-size: 2.3vw;
+              }
+              .discountTxt {
+                font-size: 1.8vw;
+              }
+            }
+            .addCart {
+              margin-top: 0.5vw;
+              font-size: 2vw;
+              border-radius: 0.8vw;
+              padding: 1.2vw 1.7vw;
             }
           }
         }
       }
     }
-
     button {
       width: 18vw;
-      padding: 1.4vw 1.2vw;
-      font-size: 2.4vw;
+      padding: 1.2vw 1.8vw;
+      margin-top: 0.8vw;
+      font-size: 3.2vw;
+      border-radius: 0.8vw;
     }
-
   }
 }
 
@@ -169,8 +200,8 @@
   .RewardPage {
     /* border: 1px solid black; */
     background: none;
-    gap: .8vw;
-    padding: 2vw;
+    gap: 0.8vw;
+    padding: 2vw 10vw;
     .logoContainer {
       width: 8vw;
       /* border: 2px solid red; */
@@ -178,16 +209,15 @@
     }
     .reward_page_heading {
       /* border: 1px solid red; */
-      gap: .8vw;
+      gap: 0.8vw;
       h2 {
         font-size: 1.2vw;
       }
     }
     .context_text {
       /* border: 2px solid red; */
-      gap: .5vw;
+      gap: 0.5vw;
     }
-
     .insta_img {
       width: 8vw;
     }
@@ -196,44 +226,62 @@
       /* border: 1px solid red; */
     }
 
-    .product_slider{
-      gap: 2vw;
-      .product_box_wrapper{
-        gap: 1vw;
-        .product_card{
+    .product_slider {
+      gap: 1vw;
+      h3 {
+        font-size: 1.8vw;
+      }
+      .swiper {
+        width: 100%;
+        gap: 0.3vw;
+        .swiperSlide {
+          width: 14vw !important;
+          height: 22vw;
+          border-radius: 0.2vw;
           padding: 1.2vw;
-          width: 13vw;
-          .card_img{
-            /* border: 2px solid red; */
-            span img{
-              width: 2vw;
+          gap: 0.5vw;
+          .card_img {
+            span {
+              img {
+                width: 3vw;
+              }
+            }
+            .imgContainer {
+              width: 80%;
             }
           }
-          .product_card_text{
-            p{
+          .product_card_text {
+            gap: 0.4vw;
+            p {
               font-size: 1vw;
             }
-            button{
-              border: .2vw solid #d8a38d;
-              font-size: 1vw;
-              text-align: center;
+            div {
+              strong {
+                font-size: 1.3vw;
+              }
+              .oldPrice {
+                font-size: 1.3vw;
+              }
+              .discountTxt {
+                font-size: 0.9vw;
+              }
             }
-            button:hover{
-              background-color: var(--text-color);
-              color: #fff;
-              border-color: var(--text-color);
+            .addCart {
+              margin-top: 0.5vw;
+              font-size: 1vw;
+              border-radius: 0.2vw;
+              padding: 0.4vw 0.5vw;
             }
           }
-          
         }
       }
     }
-
     button {
-      width: 8vw;
-      padding: 0.6vw 0;
-      font-size: 1vw;
-      border-radius: .2vw;
+      width: 18vw;
+      padding: 1.2vw 1.8vw;
+      margin-top: 0.8vw;
+      font-size: 3.2vw;
+      border-radius: 0.8vw;
     }
   }
 }

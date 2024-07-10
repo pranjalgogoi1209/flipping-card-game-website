@@ -108,7 +108,6 @@ export default function GamePage({ name, isLaptopView, score, setScore }) {
       )}
 
       {/* game result */}
-
       {showResult && (
         <GameResult
           score={score}
