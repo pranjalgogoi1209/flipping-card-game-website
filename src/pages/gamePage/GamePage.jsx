@@ -38,7 +38,7 @@ export default function GamePage({ name, isLaptopView, score, setScore }) {
     setCards(shuffledCards);
 
     // restart timing
-    setSeconds(300);
+    setSeconds(180);
 
     // restart score
     setScore(0);

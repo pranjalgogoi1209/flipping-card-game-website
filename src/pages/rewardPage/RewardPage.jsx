@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./rewardPage.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -10,11 +10,9 @@ import product_3 from "../../assets/reward/creative1_492x.progressive 1 (1).png"
 import makeupkit from "../../assets/reward/makeup_kit-1 1.png";
 import logo from "./../../assets/header/logo.png";
 import labelIcon from "../../assets/reward/label.png";
-import leftArrow from "../../assets/reward/left-arrow.png"
-import rightArrow from "../../assets/reward/right-arrow.png"
+import leftArrow from "../../assets/reward/left-arrow.png";
+import rightArrow from "../../assets/reward/right-arrow.png";
 
-// Import Swiper styles
-import "swiper/css";
 import RewardSlider from "../../components/reward/RewardSlider";
 import BgIcons from "../../components/bgIcons/BgIcons";
 
@@ -67,12 +65,63 @@ const products = [
     offer: 20,
     isNew: true,
   },
+  {
+    img: product_1,
+    name: "Anti Acne & Breakout Facewash",
+    price: 550,
+    oldPrice: 999,
+    offer: 20,
+    isNew: true,
+  },
+  {
+    img: product_1,
+    name: "Anti Acne & Breakout Facewash",
+    price: 550,
+    oldPrice: 999,
+    offer: 20,
+    isNew: true,
+  },
+  {
+    img: product_1,
+    name: "Anti Acne & Breakout Facewash",
+    price: 550,
+    oldPrice: 999,
+    offer: 20,
+    isNew: true,
+  },
+  {
+    img: product_1,
+    name: "Anti Acne & Breakout Facewash",
+    price: 550,
+    oldPrice: 999,
+    offer: 20,
+    isNew: true,
+  },
 ];
 
 export default function RewardPage({ isLaptopView, score }) {
+  const [swiper, setSwiper] = useState(null);
+
+  useEffect(() => {
+    if (swiper) {
+      console.log(swiper);
+    }
+  }, [swiper]);
+
+  const handleLeftArrowClick = () => {
+    if (swiper) {
+      swiper.slidePrev();
+    }
+  };
+
+  const handleRightArrowClick = () => {
+    if (swiper) {
+      swiper.slideNext();
+    }
+  };
+
   return (
     <div className={`flex-col-center ${styles.RewardPage}`}>
-      {/* logo */}
       {isLaptopView && (
         <div className={styles.logoContainer}>
           <img src={logo} alt="logo" />
@@ -123,72 +172,67 @@ export default function RewardPage({ isLaptopView, score }) {
 
       <div className={`flex-col-center ${styles.product_slider}`}>
         <h3>Check Out Our Bestsellers</h3>
-        {/* slider */}
         <div className={`flex-row-center ${styles.swiperParent}`}>
-          
-          {/* left arrow */}
-          <div className={`flex-row-center ${styles.leftArrow}`}>
+          <div
+            className={`flex-row-center ${styles.leftArrow}`}
+            onClick={handleLeftArrowClick}
+          >
             <img src={leftArrow} alt="left arrow" />
           </div>
-
-          {/* right arrow */}
-          <div className={`flex-row-center ${styles.rightArrow} `}>
+          <div
+            className={`flex-row-center ${styles.rightArrow}`}
+            onClick={handleRightArrowClick}
+          >
             <img src={rightArrow} alt="right arrow" />
           </div>
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={5}
-          breakpoints={{
-            0: {
-              // mobile
-              slidesPerView: 3,
-              spaceBetween: 10,
-            },
-            480: {
-              // tablet
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-            991: {
-              // laptop
-              slidesPerView: 5,
-              spaceBetween: 40,
-            },
-          }}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-          className={`flex-row-center ${styles.swiper}`}
-        >
-
-
-          {products.map((item, idx) => (
-            <SwiperSlide
-              className={`flex-col-center ${styles.swiperSlide}`}
-              key={idx}
-            >
-              <div className={`flex-row-center ${styles.card_img}`}>
-                {item.isNew && (
-                  <span>
-                    <img src={labelIcon} alt="label new" />
-                  </span>
-                )}
-
-                <div className={`flex-row-center ${styles.imgContainer}`}>
-                  <img src={item.img} alt="makeup-kit" />
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={5}
+            breakpoints={{
+              0: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              480: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              991: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+              },
+            }}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={setSwiper}
+            className={`flex-row-center ${styles.swiper}`}
+          >
+            {products.map((item, idx) => (
+              <SwiperSlide
+                className={`flex-col-center ${styles.swiperSlide}`}
+                key={idx}
+              >
+                <div className={`flex-row-center ${styles.card_img}`}>
+                  {item.isNew && (
+                    <span>
+                      <img src={labelIcon} alt="label new" />
+                    </span>
+                  )}
+                  <div className={`flex-row-center ${styles.imgContainer}`}>
+                    <img src={item.img} alt="makeup-kit" />
+                  </div>
                 </div>
-              </div>
-              <div className={`flex-col-center ${styles.product_card_text}`}>
-                <p>TIMELESS LIFT MI jklsjfkldjsfd</p>
-                <div>
-                  <strong>₹799</strong>{" "}
-                  <del className={styles.oldPrice}>₹799</del>{" "}
-                  <span className={styles.discountTxt}>20%</span>
+                <div className={`flex-col-center ${styles.product_card_text}`}>
+                  <p>TIMELESS LIFT MI jklsjfkldjsfd</p>
+                  <div>
+                    <strong>₹799</strong>{" "}
+                    <del className={styles.oldPrice}>₹799</del>{" "}
+                    <span className={styles.discountTxt}>20%</span>
+                  </div>
+                  <button className={styles.addCart}>ADD TO CART</button>
                 </div>
-                <button className={styles.addCart}>ADD TO CART</button>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
 

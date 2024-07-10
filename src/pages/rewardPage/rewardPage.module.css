@@ -37,72 +37,78 @@
     align-items: flex-start;
     width: 100%;
     gap: 2.2vw;
-
-    .swiper {
+    .swiperParent {
       width: 100%;
-      gap: 1vw;
-      .swiperSlide {
-        width: 31vw;
-        height: 58vw;
-        border: 1px solid #f6f0e3;
-        border-radius: 0.5vw;
-        background-color: #fff;
-        padding: 1.8vw;
+      .leftArrow,
+      .rightArrow {
+        display: none;
+      }
+      .swiper {
+        width: 100%;
         gap: 1vw;
-        justify-content: flex-start;
-        .card_img {
-          position: relative;
-          span {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .swiperSlide {
+          width: 31vw;
+          height: 56vw;
+          border: 1px solid #f6f0e3;
+          border-radius: 0.5vw;
+          background-color: #fff;
+          padding: 1.8vw;
+          gap: 1vw;
+          justify-content: flex-start;
+          .card_img {
+            position: relative;
+            span {
+              position: absolute;
+              top: 0;
+              left: 0;
+              img {
+                width: 7vw;
+              }
+            }
+            .imgContainer {
+              width: 100%;
+            }
+          }
+          .product_card_text {
+            align-items: flex-start;
+            gap: 0.5vw;
             img {
-              width: 7vw;
+              height: fit-content;
             }
-          }
-          .imgContainer {
-            width: 100%;
-          }
-        }
-        .product_card_text {
-          align-items: flex-start;
-          gap: 0.5vw;
-          img {
-            height: fit-content;
-          }
-          p {
-            font-size: 2.5vw;
-          }
-          div {
-            text-wrap: wrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            strong {
-              font-weight: 600;
-              font-size: 2.8vw;
+            p {
+              font-size: 2.5vw;
             }
-            .oldPrice {
-              color: #7d7d7d !important;
-              font-weight: 400;
-              font-size: 2.8vw;
+            div {
+              text-wrap: wrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              strong {
+                font-weight: 600;
+                font-size: 2.8vw;
+              }
+              .oldPrice {
+                color: #7d7d7d !important;
+                font-weight: 400;
+                font-size: 2.8vw;
+              }
+              .discountTxt {
+                color: #e91010;
+                font-size: 2.3vw;
+                font-weight: 500;
+              }
             }
-            .discountTxt {
-              color: #e91010;
-              font-size: 2.3vw;
+            .addCart {
+              margin-top: 0.5vw;
+              outline: none;
+              width: 100%;
+              font-size: 2.2vw;
+              border: 0.1vw solid #d8a38d;
+              background-color: transparent;
+              color: #42140e;
               font-weight: 500;
+              border-radius: 1vw;
+              padding: 1.5vw 2vw;
             }
-          }
-          .addCart {
-            margin-top: 0.5vw;
-            outline: none;
-            width: 100%;
-            font-size: 2.2vw;
-            border: 0.1vw solid #d8a38d;
-            background-color: transparent;
-            color: #42140e;
-            font-weight: 500;
-            border-radius: 1vw;
-            padding: 1.5vw 2vw;
           }
         }
       }
@@ -143,46 +149,54 @@
     }
     .product_slider {
       gap: 2vw;
-      .swiper {
+
+      .swiperParent {
         width: 100%;
-        gap: 0.8vw;
-        .swiperSlide {
-          width: 28vw !important;
-          height: 49vw;
-          border-radius: 0.2vw;
-          padding: 1.6vw;
+        .leftArrow,
+        .rightArrow {
+          display: none;
+        }
+        .swiper {
+          width: 100%;
           gap: 0.8vw;
-          .card_img {
-            span {
-              img {
-                width: 6vw;
+          .swiperSlide {
+            width: 28vw !important;
+            height: 49vw;
+            border-radius: 0.2vw;
+            padding: 1.6vw;
+            gap: 0.8vw;
+            .card_img {
+              span {
+                img {
+                  width: 6vw;
+                }
+              }
+              .imgContainer {
+                width: 90%;
               }
             }
-            .imgContainer {
-              width: 90%;
-            }
-          }
-          .product_card_text {
-            gap: 0.7vw;
-            p {
-              font-size: 2vw;
-            }
-            div {
-              strong {
-                font-size: 2.3vw;
+            .product_card_text {
+              gap: 0.7vw;
+              p {
+                font-size: 2vw;
               }
-              .oldPrice {
-                font-size: 2.3vw;
+              div {
+                strong {
+                  font-size: 2.3vw;
+                }
+                .oldPrice {
+                  font-size: 2.3vw;
+                }
+                .discountTxt {
+                  font-size: 1.8vw;
+                }
               }
-              .discountTxt {
-                font-size: 1.8vw;
+              .addCart {
+                margin-top: 0.5vw;
+                font-size: 2vw;
+                border-radius: 0.8vw;
+                padding: 1.2vw 1.7vw;
               }
-            }
-            .addCart {
-              margin-top: 0.5vw;
-              font-size: 2vw;
-              border-radius: 0.8vw;
-              padding: 1.2vw 1.7vw;
             }
           }
         }
@@ -204,7 +218,7 @@
     /* border: 1px solid black; */
     background: none;
     gap: 0.8vw;
-    padding: 2vw 10vw;
+    padding: 2vw 12vw;
     .logoContainer {
       width: 8vw;
       /* border: 2px solid red; */
@@ -235,69 +249,70 @@
         font-size: 1.8vw;
       }
       /* swiper parent */
-      .swiperParent{
+      .swiperParent {
         width: 100%;
         position: relative;
-        .leftArrow , .rightArrow {
+        .leftArrow,
+        .rightArrow {
           position: absolute;
           z-index: 19999;
           cursor: pointer;
-          img{
+          display: flex;
+          img {
             width: 3vw;
           }
         }
-        .leftArrow{
-          left:-1.8vw;
+        .leftArrow {
+          left: -1.8vw;
         }
-        .rightArrow{
-          right: -1.2vw;
+        .rightArrow {
+          right: -1.8vw;
         }
-      .swiper {
-        width: 100%;
-        gap: 0.3vw;
-        .swiperSlide {
-          width: 14vw !important;
-          height: 22vw;
-          border-radius: 0.2vw;
-          padding: 1.2vw;
-          gap: 0.5vw;
-          .card_img {
-            span {
-              img {
-                width: 3vw;
+        .swiper {
+          width: 100%;
+          gap: 0.3vw;
+          .swiperSlide {
+            width: 14vw !important;
+            height: 21vw;
+            border-radius: 0.2vw;
+            padding: 1.2vw;
+            gap: 0.5vw;
+            .card_img {
+              span {
+                img {
+                  width: 3vw;
+                }
+              }
+              .imgContainer {
+                width: 80%;
               }
             }
-            .imgContainer {
-              width: 80%;
-            }
-          }
-          .product_card_text {
-            gap: 0.4vw;
-            p {
-              font-size: 1vw;
-            }
-            div {
-              strong {
-                font-size: 1.3vw;
+            .product_card_text {
+              gap: 0.4vw;
+              p {
+                font-size: 0.8vw;
               }
-              .oldPrice {
-                font-size: 1.3vw;
+              div {
+                strong {
+                  font-size: 1vw;
+                }
+                .oldPrice {
+                  font-size: 1vw;
+                }
+                .discountTxt {
+                  font-size: 0.7vw;
+                }
               }
-              .discountTxt {
-                font-size: 0.9vw;
+              .addCart {
+                margin-top: 0.5vw;
+                font-size: 0.8vw;
+                border-radius: 0.2vw;
+                padding: 0.4vw 0.5vw;
               }
-            }
-            .addCart {
-              margin-top: 0.5vw;
-              font-size: 1vw;
-              border-radius: 0.2vw;
-              padding: 0.4vw 0.5vw;
             }
           }
         }
       }
-    }
-
     }
     button {
       width: 8vw;
