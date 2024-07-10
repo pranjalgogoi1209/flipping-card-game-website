@@ -10,6 +10,8 @@ import product_3 from "../../assets/reward/creative1_492x.progressive 1 (1).png"
 import makeupkit from "../../assets/reward/makeup_kit-1 1.png";
 import logo from "./../../assets/header/logo.png";
 import labelIcon from "../../assets/reward/label.png";
+import leftArrow from "../../assets/reward/left-arrow.png"
+import rightArrow from "../../assets/reward/right-arrow.png"
 
 // Import Swiper styles
 import "swiper/css";
@@ -122,6 +124,17 @@ export default function RewardPage({ isLaptopView, score }) {
       <div className={`flex-col-center ${styles.product_slider}`}>
         <h3>Check Out Our Bestsellers</h3>
         {/* slider */}
+        <div className={`flex-row-center ${styles.swiperParent}`}>
+          
+          {/* left arrow */}
+          <div className={`flex-row-center ${styles.leftArrow}`}>
+            <img src={leftArrow} alt="left arrow" />
+          </div>
+
+          {/* right arrow */}
+          <div className={`flex-row-center ${styles.rightArrow} `}>
+            <img src={rightArrow} alt="right arrow" />
+          </div>
         <Swiper
           spaceBetween={50}
           slidesPerView={5}
@@ -146,14 +159,7 @@ export default function RewardPage({ isLaptopView, score }) {
           onSwiper={(swiper) => console.log(swiper)}
           className={`flex-row-center ${styles.swiper}`}
         >
-          {/* left arrow */}
-          <div className={`flex-row-center ${styles.leftArrow}`}>
-            <img src="" alt="" />
-          </div>
-          {/* right arrow */}
-          <div className={`flex-row-center ${styles.rightArrow} `}>
-            <img src="" alt="" />
-          </div>
+
 
           {products.map((item, idx) => (
             <SwiperSlide
@@ -183,6 +189,7 @@ export default function RewardPage({ isLaptopView, score }) {
             </SwiperSlide>
           ))}
         </Swiper>
+        </div>
       </div>
 
       <button>Home</button>

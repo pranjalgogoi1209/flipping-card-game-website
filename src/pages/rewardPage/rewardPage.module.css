@@ -54,6 +54,8 @@
           position: relative;
           span {
             position: absolute;
+            top: 0;
+            left: 0;
             img {
               width: 7vw;
             }
@@ -232,6 +234,24 @@
       h3 {
         font-size: 1.8vw;
       }
+      /* swiper parent */
+      .swiperParent{
+        width: 100%;
+        position: relative;
+        .leftArrow , .rightArrow {
+          position: absolute;
+          z-index: 19;
+          cursor: pointer;
+          img{
+            width: 3vw;
+          }
+        }
+        .leftArrow{
+          left:-1.8vw;
+        }
+        .rightArrow{
+          right: -1.8vw;
+        }
       .swiper {
         width: 100%;
         gap: 0.3vw;
@@ -277,12 +297,14 @@
         }
       }
     }
+
+    }
     button {
-      width: 18vw;
-      padding: 1.2vw 1.8vw;
+      width: 8vw;
+      padding: 0.6vw 1.8vw;
       margin-top: 0.8vw;
-      font-size: 3.2vw;
-      border-radius: 0.8vw;
+      font-size: 1vw;
+      border-radius: 0.2vw;
     }
   }
 }
