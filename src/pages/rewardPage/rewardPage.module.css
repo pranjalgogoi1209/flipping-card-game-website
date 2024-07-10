@@ -41,41 +41,61 @@
   .product_slider {
     /* border: 1px solid red; */
     align-items: flex-start;
+    width: 100%;
     gap: 2.2vw;
-    h2 {
+    /* h2 {
       font-size: 3.4vw;
       color: var(--text-color);
-    }
+    } */
     .product_box_wrapper {
       /* border: 1px solid red; */
       gap: 1.5vw;
       .product_card {
-        width: 100%;
+        width: 35vw;
         border: 1px solid #f6f0e3;
         border-radius: 0.5vw;
         background-color: #fff;
-        padding: 1.5vw;
+        padding: 1.8vw;
         .card_img {
           width: 100%;
-          height: 28vw;
+          /* height: 28vw; */
+          position:relative;
+          span{
+            position: absolute;
+            img{
+              width: 6vw;
+            }
+          }
         }
         .product_card_text {
+          align-items: flex-start;
+          gap: 1.2vw;
           img {
             height: fit-content;
           }
           p {
-            font-size: 12px;
-            text-wrap: nowrap;
+            font-size: 2.5vw;
+            text-wrap: wrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            .old_price{
+              color: #7d7d7d;
+              text-decoration: line-through;
+            }
+            .discountTxt{
+              color: #e91010;
+            }
           }
           button {
             width: 100%;
-            font-size: 12px;
+            font-size: 2.2vw;
             outline: none;
             border: none;
             background-color: transparent;
             color: var(--text-color);
+            /* border: .4vw solid var(--text-color); */
+            text-align: left;
+            
           }
         }
       }
@@ -117,49 +137,86 @@
       width: 70%;
       /* border: 1px solid red; */
     }
+    .product_slider{
+      gap: 2vw;
+      .product_box_wrapper{
+        gap: 1vw;
+        .product_card{
+          width: 26vw;
+          .product_card_text{
+            p{
+              font-size: 2.4vw;
+            }
+          }
+        }
+      }
+    }
 
     button {
       width: 18vw;
       padding: 1.4vw 1.2vw;
       font-size: 2.4vw;
     }
+
   }
 }
 
 /* laptop view */
 @media all and (min-width: 991px) {
   .RewardPage {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background: none;
-    gap: 2vw;
+    gap: .8vw;
     padding: 2vw;
     .logoContainer {
       width: 8vw;
+      /* border: 2px solid red; */
+      /* margin-bottom: 2vw; */
     }
     .reward_page_heading {
       /* border: 1px solid red; */
-      gap: 1vw;
+      gap: .8vw;
       h2 {
-        font-size: 1.6vw;
+        font-size: 1.2vw;
       }
     }
     .context_text {
       /* border: 2px solid red; */
-      gap: 1.3vw;
+      gap: .5vw;
     }
 
     .insta_img {
-      width: 12vw;
+      width: 8vw;
     }
     .main_img {
-      width: 35%;
+      width: 20%;
       /* border: 1px solid red; */
     }
 
+    .product_slider{
+      gap: 2vw;
+      .product_box_wrapper{
+        gap: 1vw;
+        .product_card{
+          width: 20vw;
+          .product_card_text{
+            p{
+              font-size: 2.4vw;
+            }
+            button{
+              border: .2vw solid var(--text-color);
+            }
+          }
+          
+        }
+      }
+    }
+
     button {
-      width: 13vw;
-      padding: 0.7vw 1vw;
-      font-size: 1.4vw;
+      width: 8vw;
+      padding: 0.6vw 0;
+      font-size: 1vw;
+      border-radius: .2vw;
     }
   }
 }

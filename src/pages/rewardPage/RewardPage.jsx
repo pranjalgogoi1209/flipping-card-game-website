@@ -8,6 +8,7 @@ import product_2 from "../../assets/reward/ccd001-1_66eb95ca-6c04-4cee-9d65-b4cc
 import product_3 from "../../assets/reward/creative1_492x.progressive 1 (1).png";
 import makeupkit from "../../assets/reward/makeup_kit-1 1.png";
 import logo from "./../../assets/header/logo.png";
+import labelIcon from "../../assets/reward/label.png"
 
 // Import Swiper styles
 import "swiper/css";
@@ -63,60 +64,40 @@ export default function RewardPage({ isLaptopView, score }) {
         <img src={makeupkit} alt="makeup" />
       </div>
 
-      {/*  <div className={`flex-col-center ${styles.product_slider}`}>
-        <h2>Check Out Our bestsellers</h2>
+       <div className={`flex-col-center ${styles.product_slider}`}>
+        <h2 >Check Out Our bestsellers</h2>
 
         <div className={`flex-row-center ${styles.product_box_wrapper}`}>
-          <Swiper
-            spaceBetween={100} // Space between slides
-            slidesPerView={3} // Number of slides visible at once
-            navigation
-            //  loop
-          >
-            <SwiperSlide>
+
               <div className={styles.product_card}>
                 <div className={styles.card_img}>
-                  <img src={product_1} alt="" />
+                  <span><img src={labelIcon} alt="label new" /></span>
+                  <img src={product_1} alt="makeup-kit" />
                 </div>
-                <div className={styles.product_card_text}>
+                <div className={`flex-col-center ${styles.product_card_text}`}>
                   <p>Timeless lift mi...</p>
                   <p>
-                    ₹799 <span>₹799</span> <span>20%</span>
+                    ₹799 <span className={styles.old_price}>₹799</span> <span className={styles.discountTxt}>20%</span>
                   </p>
                   <button>+ Add to bag</button>
                 </div>
               </div>
-            </SwiperSlide>
-            <SwiperSlide>
               <div className={styles.product_card}>
                 <div className={styles.card_img}>
-                  <img src={product_2} alt="" />
+                  <span><img src={labelIcon} alt="label new" /></span>
+                  <img src={product_1} alt="makeup-kit" />
                 </div>
-                <div className={styles.product_card_text}>
-                  <p>Cellular Dry O...</p>
-                  <p>₹1299</p>
-                  <button>+ Add to bag</button>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className={styles.product_card}>
-                <div className={styles.card_img}>
-                  <img src={product_3} alt="" />
-                </div>
-                <div className={styles.product_card_text}>
-                  <p>Sexy Twosom </p>
+                <div className={`flex-col-center ${styles.product_card_text}`}>
+                  <p>Timeless lift mi...</p>
                   <p>
-                    ₹799 <span>₹799</span> <span>20%</span>
+                    ₹799 <span className={styles.old_price}>₹799</span> <span className={styles.discountTxt}>20%</span>
                   </p>
                   <button>+ Add to bag</button>
                 </div>
               </div>
-            </SwiperSlide>
-          </Swiper>
+         
         </div>
-      </div> */}
+      </div>
 
       <button>Home</button>
       {isLaptopView && <BgIcons />}
