@@ -57,7 +57,7 @@ export default function GamePage({
     setCards(shuffledCards);
 
     // restart timing
-    setSeconds(120);
+    setSeconds(40);
 
     // restart score
     setScore(0);

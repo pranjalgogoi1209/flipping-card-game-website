@@ -29,12 +29,14 @@ export default function HomePage({
 
   // console.log(typeof name, typeof mobileNumber);
 
+  const API_BASE_URL = "https://mcstaging.colorbarcosmetics.com";
+
   // api calling
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "https://mcstaging.colorbarcosmetics.com/rest/V1/webhook/gameapi/",
+        `${API_BASE_URL}/rest/V1/webhook/gameapi/`,
         {
           data: {
             name: name,
@@ -52,7 +54,7 @@ export default function HomePage({
     } catch (error) {
       console.error(error);
       // window.alert(error.message);
-      setCurrentPage("game");
+      // setCurrentPage("game");
     }
   };
 

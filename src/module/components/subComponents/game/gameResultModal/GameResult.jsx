@@ -52,13 +52,15 @@ export default function GameResult({
     updateAttempts();
   }, [score]);
 
+  const API_BASE_URL = "https://mcstaging.colorbarcosmetics.com";
+
   // api call
   useEffect(() => {
     console.log(name, mobileNumber, dataArr);
     const fetchData = async () => {
       try {
         const response = await axios.post(
-          "https://mcstaging.colorbarcosmetics.com/rest/V1/webhook/gameapi/",
+          `${API_BASE_URL}/rest/V1/webhook/gameapi/`,
           {
             data: {
               name: name,
