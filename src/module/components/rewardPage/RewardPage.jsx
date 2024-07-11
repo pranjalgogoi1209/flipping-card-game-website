@@ -138,7 +138,7 @@ export default function RewardPage({ isLaptopView, score }) {
           {scores.map((item, id) => {
             let arr = ["1st", "2nd", "3rd"];
             return (
-              <p className="txt2">
+              <p className="txt2" key={id}>
                 {arr[id]} Attempt : {item[id + 1]}
               </p>
             );

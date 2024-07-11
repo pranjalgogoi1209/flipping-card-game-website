@@ -10,7 +10,6 @@ export default function Cards({ cards, setCards, setScore }) {
 
   // handle choice
   const handleChoice = (card) => {
-    console.log(card);
     if (isClickable) {
       choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
     }
@@ -18,12 +17,12 @@ export default function Cards({ cards, setCards, setScore }) {
 
   // compare two selected cards
   useEffect(() => {
-    console.log(choiceOne, choiceTwo);
+    // console.log(choiceOne, choiceTwo);
     if (choiceOne && choiceTwo) {
       setIsClickable(false);
-      console.log("clickable => false");
+      // console.log("clickable => false");
       if (choiceOne.name === choiceTwo.name) {
-        console.log("cards match");
+        // console.log("cards match");
 
         // score increase by 1
         setScore((prev) => prev + 1);
@@ -32,9 +31,9 @@ export default function Cards({ cards, setCards, setScore }) {
           return prevCards.map((card) => {
             // it will work for both the cards, bcz src is same of choiceOne and choiceTwo
             if (card.name === choiceOne.name) {
-              console.log("card is updated");
+              // console.log("card is updated");
               const updatedCard = { ...card, isMatched: true };
-              console.log(cards);
+              // console.log(cards);
               return updatedCard;
             } else {
               return card;
@@ -42,7 +41,7 @@ export default function Cards({ cards, setCards, setScore }) {
           });
         });
       } else {
-        console.log("cards not match");
+        // console.log("cards not match");
       }
 
       // reset choices after 500 ms

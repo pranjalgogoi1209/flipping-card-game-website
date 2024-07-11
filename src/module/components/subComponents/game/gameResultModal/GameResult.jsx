@@ -18,71 +18,43 @@ export default function GameResult({
   const [attemptLeft, setAttemptLeft] = useState(3);
   const [dataArr, setDataArr] = useState([]);
 
-  useEffect(() => {
-    let dataArr = [];
-    const localDataArr = JSON.parse(localStorage.getItem("attemptsArr"));
-    console.log(localDataArr);
-    if (localDataArr) {
-      console.log("local data array hai");
-      const totalDataLength = localDataArr.length;
-      if (totalDataLength === 1) {
-        dataArr.push({
-          attempt: 2,
-          score: score,
-        });
-      } else if (totalDataLength === 2) {
-        dataArr.push({
-          attempt: 3,
-          score: score,
-        });
-      }
-    } else {
-      console.log("local data array nahi hai");
-      dataArr.push({
-        attempt: 1,
-        score: score,
-      });
-    }
-    setDataArr(dataArr);
-    console.log(dataArr);
-  }, []);
+  // Function to update local storage and dataArr state
+  const updateAttempts = () => {
+    let attemptsArr = JSON.parse(localStorage.getItem("attemptsArr")) || [];
 
-  useEffect(() => {
-    let attemptsArr = [];
-
-    const localAttemtsArr = JSON.parse(localStorage.getItem("attemptsArr"));
-    console.log(localAttemtsArr);
-    if (localAttemtsArr) {
-      console.log("if working");
-
-      const totalAttempts = localAttemtsArr.length;
-      if (totalAttempts === 1) {
-        localAttemtsArr.push({
-          2: score,
-        });
-        localStorage.setItem("attemptsArr", JSON.stringify(localAttemtsArr));
-        setAttemptLeft(1);
-      } else if (totalAttempts === 2) {
-        localAttemtsArr.push({
-          3: score,
-        });
-        localStorage.setItem("attemptsArr", JSON.stringify(localAttemtsArr));
-        setAttemptLeft(0);
-      } else {
-        setIsAttemptLeft(false);
-      }
-    } else {
-      console.log("else working");
-      attemptsArr.push({
-        1: score,
-      });
-      localStorage.setItem("attemptsArr", JSON.stringify(attemptsArr));
+    const totalAttempts = attemptsArr.length;
+    if (totalAttempts === 0) {
+      attemptsArr.push({ 1: score });
+      setDataArr([{ attempt: 1, score: score }]);
       setAttemptLeft(2);
+    } else if (totalAttempts === 1) {
+      attemptsArr.push({ 2: score });
+      setDataArr([
+        { attempt: 1, score: attemptsArr[0]["1"] },
+        { attempt: 2, score: score },
+      ]);
+      setAttemptLeft(1);
+    } else if (totalAttempts === 2) {
+      attemptsArr.push({ 3: score });
+      setDataArr([
+        { attempt: 1, score: attemptsArr[0]["1"] },
+        { attempt: 2, score: attemptsArr[1]["2"] },
+        { attempt: 3, score: score },
+      ]);
+      setAttemptLeft(0);
+      setIsAttemptLeft(false);
     }
-  }, [attemptLeft === 0]);
+
+    localStorage.setItem("attemptsArr", JSON.stringify(attemptsArr));
+  };
+
+  useEffect(() => {
+    updateAttempts();
+  }, [score]);
 
   // api call
   useEffect(() => {
+    console.log(name, mobileNumber, dataArr);
     const fetchData = async () => {
       try {
         const response = await axios.post(
@@ -97,7 +69,7 @@ export default function GameResult({
         );
         console.log(response.data);
 
-        if (response.data.atempted) {
+        if (response.data.attempted) {
           setCurrentPage("home");
         } else {
           setCurrentPage("game");
@@ -108,8 +80,10 @@ export default function GameResult({
       }
     };
 
-    fetchData();
-  }, [score]);
+    if (dataArr.length > 0) {
+      fetchData();
+    }
+  }, [dataArr, name, mobileNumber, setCurrentPage]);
 
   return (
     <div className={`flex-row-center ${styles.GameResult}`}>
