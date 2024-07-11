@@ -16,6 +16,36 @@ export default function GameResult({
 }) {
   const [isAttemptLeft, setIsAttemptLeft] = useState(true);
   const [attemptLeft, setAttemptLeft] = useState(3);
+  const [dataArr, setDataArr] = useState([]);
+
+  useEffect(() => {
+    let dataArr = [];
+    const localDataArr = JSON.parse(localStorage.getItem("attemptsArr"));
+    console.log(localDataArr);
+    if (localDataArr) {
+      console.log("local data array hai");
+      const totalDataLength = localDataArr.length;
+      if (totalDataLength === 1) {
+        dataArr.push({
+          attempt: 2,
+          score: score,
+        });
+      } else if (totalDataLength === 2) {
+        dataArr.push({
+          attempt: 3,
+          score: score,
+        });
+      }
+    } else {
+      console.log("local data array nahi hai");
+      dataArr.push({
+        attempt: 1,
+        score: score,
+      });
+    }
+    setDataArr(dataArr);
+    console.log(dataArr);
+  }, []);
 
   useEffect(() => {
     let attemptsArr = [];
@@ -51,35 +81,35 @@ export default function GameResult({
     }
   }, [attemptLeft === 0]);
 
-  /*   useEffect(async () => {
-    try {
-      const response = await axios.post(
-        "https://mcstaging.colorbarcosmetics.com/rest/V1/webhook/gameapi/",
-        {
-          data: {
-            name: name,
-            phone_number: mobileNumber,
-            scores: [
-              {
-                attempt: 1,
-                score: score,
-              },
-            ],
-          },
-        }
-      );
-      console.log(response.data);
+  // api call
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post(
+          "https://mcstaging.colorbarcosmetics.com/rest/V1/webhook/gameapi/",
+          {
+            data: {
+              name: name,
+              phone_number: mobileNumber,
+              scores: dataArr,
+            },
+          }
+        );
+        console.log(response.data);
 
-      if (response.data.atempted) {
-        setCurrentPage("home");
-      } else {
-        setCurrentPage("game");
+        if (response.data.atempted) {
+          setCurrentPage("home");
+        } else {
+          setCurrentPage("game");
+        }
+      } catch (error) {
+        console.error(error);
+        // window.alert(error.message);
       }
-    } catch (error) {
-      console.error(error);
-      // window.alert(error.message);
-    }
-  }, []); */
+    };
+
+    fetchData();
+  }, [score]);
 
   return (
     <div className={`flex-row-center ${styles.GameResult}`}>

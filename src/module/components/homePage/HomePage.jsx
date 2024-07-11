@@ -27,6 +27,8 @@ export default function HomePage({
     }
   }, []); */
 
+  // console.log(typeof name, typeof mobileNumber);
+
   // api calling
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -50,6 +52,7 @@ export default function HomePage({
     } catch (error) {
       console.error(error);
       // window.alert(error.message);
+      setCurrentPage("game");
     }
   };
 
