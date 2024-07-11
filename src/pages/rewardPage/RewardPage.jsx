@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./rewardPage.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { IoIosArrowBack ,IoIosArrowForward} from "react-icons/io";
 import "swiper/css";
 
 import instagramLogo from "../../assets/reward/Follow Us On Instagram 1.png";
@@ -13,7 +14,6 @@ import labelIcon from "../../assets/reward/label.png";
 import leftArrow from "../../assets/reward/left-arrow.png";
 import rightArrow from "../../assets/reward/right-arrow.png";
 
-import RewardSlider from "../../components/reward/RewardSlider";
 import BgIcons from "../../components/bgIcons/BgIcons";
 
 const products = [
@@ -101,6 +101,8 @@ const products = [
 
 export default function RewardPage({ isLaptopView, score }) {
   const [swiper, setSwiper] = useState(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
 
   useEffect(() => {
     if (swiper) {
@@ -119,6 +121,11 @@ export default function RewardPage({ isLaptopView, score }) {
       swiper.slideNext();
     }
   };
+
+  const handleSlideChange=(slide)=>{
+    setIsBeginning(slide.isBeginning);
+    setIsEnd(slide.isEnd);
+  }
 
   return (
     <div className={`flex-col-center ${styles.RewardPage}`}>
@@ -177,13 +184,15 @@ export default function RewardPage({ isLaptopView, score }) {
             className={`flex-row-center ${styles.leftArrow}`}
             onClick={handleLeftArrowClick}
           >
-            <img src={leftArrow} alt="left arrow" />
+            {/* <img src={leftArrow} alt="left arrow" /> */}
+          <IoIosArrowBack  className={`${styles.leftIcon} ${isBeginning ? styles.disabled :""}`} />
           </div>
           <div
             className={`flex-row-center ${styles.rightArrow}`}
             onClick={handleRightArrowClick}
           >
-            <img src={rightArrow} alt="right arrow" />
+            {/* <img src={rightArrow} alt="right arrow" /> */}
+            <IoIosArrowForward className={`${styles.rightIcon} ${isEnd ? styles.disabled : ""}`} />
           </div>
           <Swiper
             spaceBetween={50}
@@ -202,7 +211,7 @@ export default function RewardPage({ isLaptopView, score }) {
                 spaceBetween: 30,
               },
             }}
-            onSlideChange={() => console.log("slide change")}
+            onSlideChange={handleSlideChange}
             onSwiper={setSwiper}
             className={`flex-row-center ${styles.swiper}`}
           >
