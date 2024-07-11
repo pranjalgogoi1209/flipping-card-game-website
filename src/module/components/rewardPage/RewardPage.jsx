@@ -118,6 +118,14 @@ export default function RewardPage({ isLaptopView, score }) {
     }
   };
 
+  const scores = JSON.parse(localStorage.getItem("attemptsArr"));
+  // Extract all scores into an array
+  const scoreValues = scores.map(obj => Object.values(obj)[0]);
+
+// Find the highest score
+ const highestScore = Math.max(...scoreValues);
+  console.log(highestScore)
+
   return (
     <div className={`flex-col-center ${styles.RewardPage}`}>
       {isLaptopView && (
@@ -128,8 +136,12 @@ export default function RewardPage({ isLaptopView, score }) {
 
       <div className={`flex-col-center ${styles.reward_page_heading}`}>
         <h1>Congratulations!</h1>
+        {scores.map((item,id)=>{
+          let arr = ['1st','2nd','3rd'];
+          return <p className="txt1">{arr[id]} Attempt : {item[id+1]}</p>
+        })}
         <h3>
-          <span style={{ fontWeight: "500" }}>YOUR SCORE IS</span>{" "}
+          <span style={{ fontWeight: "500" }}>YOUR BEST SCORE IS </span>{" "}
           <em>
             <strong>{score}</strong>
           </em>
