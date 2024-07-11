@@ -258,28 +258,15 @@
           z-index: 19999;
           cursor: pointer;
           display: flex;
-          .rightIcon , .leftIcon{
-            border-radius: 50%;
-            font-size: 1.4vw;
-            background-color: #fff;
-            border: .1vw solid #D8A38D;
-            padding: .21vw;
-            fill: #000;
-          }
-          .disabled{
-            border: .1vw solid #bdbab96e;
-            background-color: #d3d3d3;
-            fill: #6e6b6b;
-          }
           img {
             width: 3vw;
           }
         }
         .leftArrow {
-          left: -0.8vw;
+          left: -1.8vw;
         }
         .rightArrow {
-          right: -0.8vw;
+          right: -1.8vw;
         }
         .swiper {
           width: 100%;
