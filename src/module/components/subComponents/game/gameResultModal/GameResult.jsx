@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./gameResult.module.css";
 import { FaPlay } from "react-icons/fa";
+import axios from "axios";
 
 export default function GameResult({
   score,
@@ -10,46 +11,75 @@ export default function GameResult({
   setShowResult,
   shuffleCards,
   setCurrentPage,
+  name,
+  mobileNumber,
 }) {
   const [isAttemptLeft, setIsAttemptLeft] = useState(true);
   const [attemptLeft, setAttemptLeft] = useState(3);
 
-  const totalScore = 10;
-
   useEffect(() => {
-    if (score !== totalScore) {
-      let attemptsArr = [];
+    let attemptsArr = [];
 
-      const localAttemtsArr = JSON.parse(localStorage.getItem("attemptsArr"));
-      console.log(localAttemtsArr);
-      if (localAttemtsArr) {
-        console.log("if working");
-        const totalAttempts = localAttemtsArr.length;
-        if (totalAttempts === 1) {
-          localAttemtsArr.push({
-            2: score,
-          });
-          localStorage.setItem("attemptsArr", JSON.stringify(localAttemtsArr));
-          setAttemptLeft(1);
-        } else if (totalAttempts === 2) {
-          localAttemtsArr.push({
-            3: score,
-          });
-          localStorage.setItem("attemptsArr", JSON.stringify(localAttemtsArr));
-          setAttemptLeft(0);
-        } else {
-          setIsAttemptLeft(false);
-        }
-      } else {
-        console.log("else working");
-        attemptsArr.push({
-          1: score,
+    const localAttemtsArr = JSON.parse(localStorage.getItem("attemptsArr"));
+    console.log(localAttemtsArr);
+    if (localAttemtsArr) {
+      console.log("if working");
+
+      const totalAttempts = localAttemtsArr.length;
+      if (totalAttempts === 1) {
+        localAttemtsArr.push({
+          2: score,
         });
-        localStorage.setItem("attemptsArr", JSON.stringify(attemptsArr));
-        setAttemptLeft(2);
+        localStorage.setItem("attemptsArr", JSON.stringify(localAttemtsArr));
+        setAttemptLeft(1);
+      } else if (totalAttempts === 2) {
+        localAttemtsArr.push({
+          3: score,
+        });
+        localStorage.setItem("attemptsArr", JSON.stringify(localAttemtsArr));
+        setAttemptLeft(0);
+      } else {
+        setIsAttemptLeft(false);
       }
+    } else {
+      console.log("else working");
+      attemptsArr.push({
+        1: score,
+      });
+      localStorage.setItem("attemptsArr", JSON.stringify(attemptsArr));
+      setAttemptLeft(2);
     }
   }, [attemptLeft === 0]);
+
+  /*   useEffect(async () => {
+    try {
+      const response = await axios.post(
+        "https://mcstaging.colorbarcosmetics.com/rest/V1/webhook/gameapi/",
+        {
+          data: {
+            name: name,
+            phone_number: mobileNumber,
+            scores: [
+              {
+                attempt: 1,
+                score: score,
+              },
+            ],
+          },
+        }
+      );
+      console.log(response.data);
+
+      if (response.data.atempted) {
+        setCurrentPage("home");
+      } else {
+        setCurrentPage("game");
+      }
+    } catch (error) {
+      console.error(error);
+      // window.alert(error.message);
+    }
+  }, []); */
 
   return (
     <div className={`flex-row-center ${styles.GameResult}`}>

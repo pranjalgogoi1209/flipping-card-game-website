@@ -106,7 +106,7 @@ export default function RewardPage({ isLaptopView, score }) {
     }
   }, [swiper]);
 
-  const handleLeftArrowClick = () => {
+  /*   const handleLeftArrowClick = () => {
     if (swiper) {
       swiper.slidePrev();
     }
@@ -116,15 +116,13 @@ export default function RewardPage({ isLaptopView, score }) {
     if (swiper) {
       swiper.slideNext();
     }
-  };
+  }; */
 
   const scores = JSON.parse(localStorage.getItem("attemptsArr"));
-  // Extract all scores into an array
-  const scoreValues = scores.map(obj => Object.values(obj)[0]);
+  const scoreValues = scores.map((obj) => Object.values(obj)[0]);
 
-// Find the highest score
- const highestScore = Math.max(...scoreValues);
-  console.log(highestScore)
+  const highestScore = Math.max(...scoreValues);
+  // console.log(highestScore);
 
   return (
     <div className={`flex-col-center ${styles.RewardPage}`}>
@@ -136,14 +134,20 @@ export default function RewardPage({ isLaptopView, score }) {
 
       <div className={`flex-col-center ${styles.reward_page_heading}`}>
         <h1>Congratulations!</h1>
-        {scores.map((item,id)=>{
-          let arr = ['1st','2nd','3rd'];
-          return <p className="txt1">{arr[id]} Attempt : {item[id+1]}</p>
-        })}
+        <div className={`flex-col-center ${styles.attemptsContainer}`}>
+          {scores.map((item, id) => {
+            let arr = ["1st", "2nd", "3rd"];
+            return (
+              <p className="txt2">
+                {arr[id]} Attempt : {item[id + 1]}
+              </p>
+            );
+          })}
+        </div>
         <h3>
           <span style={{ fontWeight: "500" }}>YOUR BEST SCORE IS </span>{" "}
           <em>
-            <strong>{score}</strong>
+            <strong>{highestScore}</strong>
           </em>
         </h3>
       </div>

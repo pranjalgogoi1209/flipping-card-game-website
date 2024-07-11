@@ -5,11 +5,10 @@ import { HomePage, GamePage, RewardPage, Header, Footer } from "../components";
 
 export default function FlippingCardMemoryGame() {
   const [name, setName] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
   const [isLaptopView, setIsLaptopView] = useState(false);
   const [score, setScore] = useState(0);
   const [currentPage, setCurrentPage] = useState("home");
-
-  console.log("is laptop view =>", isLaptopView);
 
   useEffect(() => {
     function updateLaptopView() {
@@ -29,8 +28,6 @@ export default function FlippingCardMemoryGame() {
     };
   }, []);
 
-  console.log(currentPage);
-
   return (
     <>
       {!isLaptopView && <Header />}
@@ -39,6 +36,8 @@ export default function FlippingCardMemoryGame() {
         <HomePage
           name={name}
           setName={setName}
+          mobileNumber={mobileNumber}
+          setMobileNumber={setMobileNumber}
           isLaptopView={isLaptopView}
           setCurrentPage={setCurrentPage}
         />
@@ -47,6 +46,7 @@ export default function FlippingCardMemoryGame() {
       {currentPage === "game" && (
         <GamePage
           name={name}
+          mobileNumber={mobileNumber}
           isLaptopView={isLaptopView}
           score={score}
           setScore={setScore}

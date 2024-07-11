@@ -9,38 +9,51 @@ import logo from "./../../assets/header/logo.png";
 export default function HomePage({
   name,
   setName,
+  mobileNumber,
+  setMobileNumber,
   isLaptopView,
   setCurrentPage,
 }) {
-  const [mobileNumber, setMobileNumber] = useState("");
-  const [isNoMoreAttempt, setIsNoMoreAttempt] = useState(false);
+  // const [isNoMoreAttempt, setIsNoMoreAttempt] = useState(false);
 
   // testing user's atempts
-  useEffect(() => {
+  /*  useEffect(() => {
     const localAttemtsArr = JSON.parse(localStorage.getItem("attemptsArr"));
     if (localAttemtsArr) {
       const totalAttempts = localAttemtsArr.length;
-      if (totalAttempts >= 3) {
+      if (totalAttempts >= 1) {
         setIsNoMoreAttempt(true);
       }
     }
-  }, []);
+  }, []); */
 
   // api calling
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("https://your-api-url.com/start-game", {
-        name,
-        mobileNumber,
-      });
+      const response = await axios.post(
+        "https://mcstaging.colorbarcosmetics.com/rest/V1/webhook/gameapi/",
+        {
+          data: {
+            name: name,
+            phone_number: mobileNumber,
+          },
+        }
+      );
       console.log(response.data);
-      setCurrentPage("game");
+
+      if (response.data.atempted) {
+        setCurrentPage("home");
+      } else {
+        setCurrentPage("game");
+      }
     } catch (error) {
       console.error(error);
-      setCurrentPage("game");
+      // window.alert(error.message);
     }
   };
+
+  // window.origin + endpoint
 
   return (
     <div className={`flex-col-center ${styles.HomePage}`}>
@@ -141,10 +154,11 @@ export default function HomePage({
               maxLength={10}
             />
           </div>
+          {/*  ${isNoMoreAttempt && styles.disableBtn} */}
           <button
             type="submit"
-            className={`txt2 ${isNoMoreAttempt && styles.disableBtn}`}
-            disabled={isNoMoreAttempt}
+            className={`txt2`}
+            // disabled={isNoMoreAttempt}
           >
             Start Game
           </button>

@@ -14,6 +14,14 @@
     p {
       font-weight: 600;
     }
+    .attemptsContainer {
+      /* border: 1px solid black; */
+      align-items: flex-start;
+      gap: 0.5vw;
+      p {
+        font-weight: 500;
+      }
+    }
   }
   .context_text {
     padding: 1.4vw;
@@ -137,6 +145,9 @@
       h2 {
         font-size: 2.3vw;
       }
+      .attemptsContainer {
+        gap: 0.3vw;
+      }
     }
     .context_text {
       gap: 1.3vw;
@@ -229,6 +240,9 @@
       gap: 0.8vw;
       h2 {
         font-size: 1.2vw;
+      }
+      .attemptsContainer {
+        gap: 0.1vw;
       }
     }
     .context_text {

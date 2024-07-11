@@ -11,6 +11,7 @@ import logo from "./../../assets/header/logo.png";
 
 export default function GamePage({
   name,
+  mobileNumber,
   isLaptopView,
   score,
   setScore,
@@ -24,7 +25,7 @@ export default function GamePage({
   const [startingCountDown, setStartingCountDown] = useState(3);
 
   // testing user's atempts
-  useEffect(() => {
+  /*   useEffect(() => {
     const localAttemtsArr = JSON.parse(localStorage.getItem("attemptsArr"));
     if (localAttemtsArr) {
       const totalAttempts = localAttemtsArr.length;
@@ -32,7 +33,7 @@ export default function GamePage({
         setCurrentPage("home");
       }
     }
-  }, []);
+  }, []); */
 
   // starting count down
   useEffect(() => {
@@ -48,7 +49,7 @@ export default function GamePage({
 
   // shuffle cards at the time of newgame
   const shuffleCards = () => {
-    console.log("Starting a New Game");
+    // console.log("Starting a New Game");
     const shuffledCards = [...backCardsArr, ...backCardsArr]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }));
@@ -56,7 +57,7 @@ export default function GamePage({
     setCards(shuffledCards);
 
     // restart timing
-    setSeconds(10);
+    setSeconds(40);
 
     // restart score
     setScore(0);
@@ -134,6 +135,8 @@ export default function GamePage({
       {/* game result */}
       {showResult && (
         <GameResult
+          name={name}
+          mobileNumber={mobileNumber}
           score={score}
           seconds={seconds}
           setIsGameStarted={setIsGameStarted}
