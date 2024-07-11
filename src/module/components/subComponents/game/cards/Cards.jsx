@@ -56,7 +56,7 @@ export default function Cards({ cards, setCards, setScore }) {
     setChoiceOne(null);
     setChoiceTwo(null);
     setIsClickable(true);
-    console.log("clickable => true");
+    // console.log("clickable => true");
   };
 
   return (

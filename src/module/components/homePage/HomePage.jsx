@@ -54,7 +54,7 @@ export default function HomePage({
     } catch (error) {
       console.error(error);
       // window.alert(error.message);
-      // setCurrentPage("game");
+      setCurrentPage("game");
     }
   };
 
