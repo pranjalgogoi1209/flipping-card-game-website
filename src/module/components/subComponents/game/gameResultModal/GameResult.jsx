@@ -54,28 +54,35 @@ export default function GameResult({
 
   const API_BASE_URL = "https://mcstaging.colorbarcosmetics.com";
 
-  // api call
+  // API call
   useEffect(() => {
     console.log(name, mobileNumber, dataArr);
+
     const fetchData = async () => {
       try {
-        const response = await axios.post(
+        const response = await fetch(
           `${API_BASE_URL}/rest/V1/webhook/gameapi/`,
           {
-            data: {
-              name: name,
-              phone_number: mobileNumber,
-              scores: dataArr,
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
             },
+            body: JSON.stringify({
+              data: {
+                name: name,
+                phone_number: mobileNumber,
+                scores: dataArr,
+              },
+            }),
           }
         );
-        console.log(response.data);
 
-        if (response.data.attempted) {
-          setCurrentPage("home");
-        } else {
-          setCurrentPage("game");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
         }
+
+        const responseData = await response.json();
+        console.log(responseData);
       } catch (error) {
         console.error(error);
         // window.alert(error.message);

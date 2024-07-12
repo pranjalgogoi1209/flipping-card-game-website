@@ -31,30 +31,37 @@ export default function HomePage({
 
   const API_BASE_URL = "https://mcstaging.colorbarcosmetics.com";
 
-  // api calling
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(
-        `${API_BASE_URL}/rest/V1/webhook/gameapi/`,
-        {
+      const response = await fetch(`${API_BASE_URL}/rest/V1/webhook/gameapi/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
           data: {
             name: name,
             phone_number: mobileNumber,
           },
-        }
-      );
-      console.log(response.data);
+        }),
+      });
 
-      if (response.data.atempted) {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await response.json();
+      console.log(data);
+
+      if (data.atempted) {
         setCurrentPage("home");
       } else {
         setCurrentPage("game");
       }
     } catch (error) {
       console.error(error);
-      // window.alert(error.message);
-      setCurrentPage("game");
+      // setCurrentPage("game");
     }
   };
 
