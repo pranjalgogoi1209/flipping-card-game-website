@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./gameResult.module.css";
 import { FaPlay } from "react-icons/fa";
-import axios from "axios";
 
 export default function GameResult({
   score,
